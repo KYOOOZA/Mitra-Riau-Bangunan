@@ -735,3 +735,55 @@ document.addEventListener(
 
     }
 );
+
+// =========================
+// FILTER KATEGORI (UPDATED)
+// =========================
+
+function filterProducts(category) {
+
+    const searchInput = document.getElementById("searchInput");
+
+    if (searchInput) {
+        searchInput.value = "";
+    }
+
+    let filteredProducts;
+
+    if (category === "Semua") {
+        filteredProducts = products;
+    } else {
+        filteredProducts = products.filter(product =>
+            product.category === category
+        );
+    }
+
+    displayProducts(filteredProducts);
+
+    // =========================
+    // UPDATE TOMBOL FILTER
+    // =========================
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
+
+    filterButtons.forEach(button => {
+        button.classList.remove("active");
+
+        // Perbaikan: gunakan .includes() agar perbandingan nama kategori presisi
+        if (button.textContent.trim().toLowerCase() === category.toLowerCase()) {
+            button.classList.add("active");
+        }
+    });
+
+    // =========================
+    // SCROLL KE PRODUK
+    // =========================
+
+    const productSection = document.getElementById("produk");
+
+    if (productSection) {
+        productSection.scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+}
