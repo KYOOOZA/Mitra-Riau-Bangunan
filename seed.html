@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Impor Data Produk ke Firebase</title>
+</head>
+<body style="font-family: sans-serif; padding: 30px; text-align: center;">
+    <h2>Mengunggah 32 Data Produk ke Firebase...</h2>
+    <h3 id="status" style="color: blue;">Sedang memproses, mohon tunggu...</h3>
+
+    <!-- SDK Firebase CDN (Compat Version) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+    <script>
+      // Konfigurasi Firebase Mitra Riau Indonesia
+      const firebaseConfig = {
+        apiKey: "AIzaSyBhn689VnvO4qML2QsE2KQGO9Xo9I9Zi1I",
+        authDomain: "mitra-riau-indonesia.firebaseapp.com",
+        projectId: "mitra-riau-indonesia",
+        storageBucket: "mitra-riau-indonesia.firebasestorage.app",
+        messagingSenderId: "169780688417",
+        appId: "1:169780688417:web:485b547b3d8bd86c2f1560",
+        measurementId: "G-5568TV89PB"
+      };
+
+      // Inisialisasi Firebase & Firestore
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+
+      // Data 32 Produk Mitra Riau Bangunan
+      const initialProducts = [
+        // KERAMIK & GRANITE
+        { name: "Keramik 60x60", category: "Keramik & Granite", price: 125000, stock: 50, unit: "dus", icon: "▦", description: "Keramik lantai ukuran 60x60 cm." },
+        { name: "Keramik 40x40", category: "Keramik & Granite", price: 95000, stock: 50, unit: "dus", icon: "▦", description: "Keramik lantai ukuran 40x40 cm." },
+        { name: "Keramik 30x30", category: "Keramik & Granite", price: 75000, stock: 50, unit: "dus", icon: "▦", description: "Keramik lantai ukuran 30x30 cm." },
+        { name: "Granite Tile 60x60", category: "Keramik & Granite", price: 185000, stock: 30, unit: "dus", icon: "▦", description: "Granite tile premium ukuran 60x60 cm." },
+
+        // PINTU, JENDELA & KUSEN
+        { name: "Pintu PVC", category: "Pintu, Jendela, & Kusen", price: 450000, stock: 15, unit: "unit", icon: "🚪", description: "Pintu PVC untuk kebutuhan rumah." },
+        { name: "Pintu Panel", category: "Pintu, Jendela, & Kusen", price: 750000, stock: 10, unit: "unit", icon: "🚪", description: "Pintu panel untuk rumah dan bangunan." },
+        { name: "Kusen Aluminium", category: "Pintu, Jendela, & Kusen", price: 350000, stock: 25, unit: "unit", icon: "▣", description: "Kusen aluminium berkualitas." },
+        { name: "Jendela Aluminium", category: "Pintu, Jendela, & Kusen", price: 550000, stock: 20, unit: "unit", icon: "▣", description: "Jendela aluminium untuk rumah." },
+
+        // CAT & ALAT PELAPIS
+        { name: "Cat Tembok Interior", category: "Cat & Alat Pelapis", price: 125000, stock: 40, unit: "kaleng", icon: "🎨", description: "Cat tembok untuk penggunaan interior." },
+        { name: "Cat Tembok Eksterior", category: "Cat & Alat Pelapis", price: 145000, stock: 35, unit: "kaleng", icon: "🎨", description: "Cat eksterior tahan terhadap cuaca." },
+        { name: "Cat Kayu & Besi", category: "Cat & Alat Pelapis", price: 95000, stock: 30, unit: "kaleng", icon: "🎨", description: "Cat untuk permukaan kayu dan besi." },
+        { name: "Roller Cat", category: "Cat & Alat Pelapis", price: 35000, stock: 50, unit: "pcs", icon: "🖌️", description: "Roller untuk mengecat dinding." },
+
+        // CLOSET, SHOWER & WATER HEATER
+        { name: "Closet Duduk", category: "Closet, Shower, & Water Heater", price: 1250000, stock: 8, unit: "unit", icon: "🚽", description: "Closet duduk untuk kamar mandi." },
+        { name: "Closet Jongkok", category: "Closet, Shower, & Water Heater", price: 350000, stock: 15, unit: "unit", icon: "🚽", description: "Closet jongkok berkualitas." },
+        { name: "Shower Kamar Mandi", category: "Closet, Shower, & Water Heater", price: 275000, stock: 20, unit: "unit", icon: "🚿", description: "Shower kamar mandi modern." },
+        { name: "Water Heater", category: "Closet, Shower, & Water Heater", price: 1850000, stock: 5, unit: "unit", icon: "♨️", description: "Pemanas air untuk kebutuhan rumah." },
+
+        // PIPA & TOREN AIR
+        { name: "Pipa PVC 1/2 Inch", category: "Pipa & Toren Air", price: 25000, stock: 100, unit: "batang", icon: "🔵", description: "Pipa PVC untuk instalasi air." },
+        { name: "Pipa PVC 3/4 Inch", category: "Pipa & Toren Air", price: 32000, stock: 100, unit: "batang", icon: "🔵", description: "Pipa PVC ukuran 3/4 inch." },
+        { name: "Pipa PVC 1 Inch", category: "Pipa & Toren Air", price: 45000, stock: 80, unit: "batang", icon: "🔵", description: "Pipa PVC ukuran 1 inch." },
+        { name: "Toren Air 500 Liter", category: "Pipa & Toren Air", price: 1250000, stock: 6, unit: "unit", icon: "🛢️", description: "Toren air kapasitas 500 liter." },
+
+        // BESI & BAJA RINGAN
+        { name: "Besi Beton 8mm", category: "Besi & Baja Ringan", price: 85000, stock: 200, unit: "batang", icon: "▰", description: "Besi beton ukuran 8 mm." },
+        { name: "Besi Beton 10mm", category: "Besi & Baja Ringan", price: 110000, stock: 150, unit: "batang", icon: "▰", description: "Besi beton ukuran 10 mm." },
+        { name: "Besi Beton 12mm", category: "Besi & Baja Ringan", price: 155000, stock: 100, unit: "batang", icon: "▰", description: "Besi beton ukuran 12 mm." },
+        { name: "Baja Ringan C75", category: "Besi & Baja Ringan", price: 95000, stock: 250, unit: "batang", icon: "▰", description: "Baja ringan profil C75." },
+
+        // SEMEN & BAHAN BANGUNAN
+        { name: "Semen Tiga Roda", category: "Semen & Bahan Bangunan", price: 75000, stock: 100, unit: "sak", icon: "🧱", description: "Semen untuk berbagai kebutuhan konstruksi." },
+        { name: "Semen Padang", category: "Semen & Bahan Bangunan", price: 73000, stock: 100, unit: "sak", icon: "🧱", description: "Semen untuk pekerjaan bangunan." },
+        { name: "Pasir Bangunan", category: "Semen & Bahan Bangunan", price: 350000, stock: 20, unit: "m³", icon: "⛰️", description: "Pasir untuk campuran konstruksi." },
+        { name: "Batu Bata", category: "Semen & Bahan Bangunan", price: 1200, stock: 5000, unit: "pcs", icon: "🧱", description: "Batu bata untuk dinding bangunan." },
+
+        // PERKAKAS, BAUT & AKSESORIS
+        { name: "Paku Bangunan", category: "Perkakas, Baut & Aksesoris", price: 25000, stock: 50, unit: "kotak", icon: "🔩", description: "Paku untuk berbagai kebutuhan bangunan." },
+        { name: "Baut Besi", category: "Perkakas, Baut & Aksesoris", price: 30000, stock: 50, unit: "kotak", icon: "🔩", description: "Baut untuk kebutuhan konstruksi." },
+        { name: "Obeng Set", category: "Perkakas, Baut & Aksesoris", price: 75000, stock: 25, unit: "set", icon: "🪛", description: "Set obeng untuk pekerjaan rumah." },
+        { name: "Tang Kombinasi", category: "Perkakas, Baut & Aksesoris", price: 65000, stock: 30, unit: "pcs", icon: "🔧", description: "Tang kombinasi untuk berbagai pekerjaan." }
+      ];
+
+      // Unggah Data ke Firestore
+      async function uploadData() {
+          const batch = db.batch();
+          initialProducts.forEach(product => {
+              const docRef = db.collection("products").doc();
+              batch.set(docRef, product);
+          });
+
+          try {
+              await batch.commit();
+              document.getElementById("status").innerText = "🎉 SUKSES! 32 Produk Berhasil Dimasukkan ke Firebase.";
+              document.getElementById("status").style.color = "green";
+          } catch (err) {
+              document.getElementById("status").innerText = "❌ Gagal Mengunggah: " + err.message;
+              document.getElementById("status").style.color = "red";
+          }
+      }
+
+      uploadData();
+    </script>
+</body>
+</html>

@@ -80,7 +80,7 @@
                     href="#produk"
                     class="btn-primary"
                 >
-                    Belanja Sekarang
+                    Lihat Katalog
                 </a>
 
                 <a
@@ -111,7 +111,7 @@
             <p>KATEGORI PRODUK</p>
 
             <h2>
-                Belanja Berdasarkan Kategori
+                Lihat Berdasarkan Kategori
             </h2>
 
         </div>
@@ -215,7 +215,7 @@
 
         <div class="section-title">
 
-            <p>PRODUK KAMI</p>
+            <p>KATALOG KAMI</p>
 
             <h2>
                 Daftar Produk
@@ -474,7 +474,7 @@
 
 
     <!-- =========================
-         CART MODAL (DIREVISI & RAPI)
+         CART MODAL (KHUSUS TANYA BARANG)
     ========================== -->
 
     <div
@@ -483,7 +483,6 @@
     >
 
         <div class="cart-content">
-
 
             <button
                 class="close-cart"
@@ -494,81 +493,29 @@
                 ×
             </button>
 
-
             <h2>
-                Keranjang Belanja
+                Daftar Barang yang Ditanyakan
             </h2>
 
-
             <div id="cartItems">
-
                 <p class="empty-cart">
                     Keranjang masih kosong.
                 </p>
-
             </div>
 
-
-            <div class="cart-total">
-
-                <strong>    
-                    Total:
-                </strong>
-
-                <strong id="cartTotal">
-                    Rp0
-                </strong>
-
+            <div class="cart-total" style="margin: 15px 0; font-weight: bold;">
+                <span>Total Barang:</span>
+                <span id="cartTotal">0 Produk</span>
             </div>
-
-            <!-- METODE PEMBAYARAN -->
-            <div class="payment-methods" style="margin: 15px 0; padding: 12px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; font-size: 13px; text-align: left;">
-                <strong>💳 Pilih Metode Pembayaran:</strong>
-                <p style="margin: 5px 0; color: #555;">Scan QRIS di bawah ini (Bisa pakai <b>DANA, ShopeePay, GoPay, OVO, & M-Banking</b>):</p>
-                
-                <div style="text-align: center; margin: 10px 0;">
-                    <img src="qris-toko.png" alt="QRIS Mitra Riau Bangunan" style="max-width: 160px; border: 1px solid #ccc; border-radius: 6px;">
-                </div>
-
-                <hr style="border: 0.5px solid #eee; margin: 8px 0;">
-                
-                <strong>📱 No. E-Wallet / Bank Alternatif:</strong>
-                <ul style="margin: 5px 0; padding-left: 18px; line-height: 1.5;">
-                    <li>DANA / ShopeePay / GoPay: <b>0853-7676-5758</b> (a.n Mitra Riau Bangunan)</li>
-                    <li>Bank BCA: <b>123-456-7890</b> (a.n Mitra Riau Bangunan)</li>
-                </ul>
-            </div>
-
-        <!-- ============================================= -->
-        <!-- TEMPATKAN KODE PILIH METODE PEMBAYARAN DI SINI -->
-        <!-- ============================================= -->
-        <div class="payment-method-selector" style="margin-top: 15px; text-align: left;">
-            <label for="paymentMethod" style="font-weight: bold; display: block; margin-bottom: 5px;">
-                💳 Pilih Metode Pembayaran:
-            </label>
-            <select id="paymentMethod" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
-                <option value="QRIS">QRIS (DANA, ShopeePay, GoPay, OVO, M-Banking)</option>
-                <option value="DANA / E-Wallet">DANA / ShopeePay / GoPay (0853-7676-5758)</option>
-                <option value="Bank BCA">Bank BCA (123-456-7890)</option>
-            </select>
-        </div>
-
-        <!-- Tombol Checkout -->
-        <button onclick="checkout()" style="width: 100%; margin-top: 15px; padding: 12px; background: #f39c12; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">
-            Transfer & Konfirmasi via WA
-        </button>
-
-        </div>
-    </div>
 
             <!-- TOMBOL ACTION -->
             <button
                 class="checkout-btn"
                 onclick="checkout()"
                 type="button"
-                style="width: 100%; padding: 12px; background: #f5a400; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;"
+                style="width: 100%; padding: 12px; background: #25D366; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 14px;"
             >
-                Transfer & Konfirmasi via WA
+                💬 Tanyakan Harga & Stok via WA
             </button>
 
         </div>
