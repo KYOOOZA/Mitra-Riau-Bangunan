@@ -52,11 +52,8 @@ const products = [
     { id: 32, name: "Tang Kombinasi", category: "Perkakas, Baut & Aksesoris", unit: "pcs", icon: "🔧", description: "Tang kombinasi untuk berbagai pekerjaan." }
 ];
 
-const ADMIN_WA = "6285376765758";
-let cart = [];
-
 // =========================
-// TAMPILKAN PRODUK (KATALOG TANPA HARGA & STOK)
+// TAMPILKAN PRODUK (KATALOG MURNI)
 // =========================
 
 function displayProducts(productList = products) {
@@ -65,46 +62,29 @@ function displayProducts(productList = products) {
 
     if (productList.length === 0) {
         productContainer.innerHTML = `
-            <div class="empty-cart">
+            <div class="empty-cart" style="grid-column: 1/-1; text-align: center; padding: 40px; color: #777;">
                 Produk tidak ditemukan.
             </div>
         `;
         return;
     }
 
-    productContainer.innerHTML = productList.map(product => {
-        const pesanTanya = encodeURIComponent(`Halo Mitra Riau Bangunan, saya mau tanya ketersediaan dan harga untuk produk: ${product.name}`);
-        const linkWA = `https://wa.me/${ADMIN_WA}?text=${pesanTanya}`;
-
-        return `
-            <div class="product-card">
-                <div class="product-image">
-                    ${product.icon}
-                </div>
-                <div class="product-info">
-                    <div class="product-category">
-                        ${product.category}
-                    </div>
-                    <h3>${product.name}</h3>
-                    <p class="product-description">
-                        ${product.description}
-                    </p>
-                    <div class="product-bottom" style="gap: 8px;">
-                        <a href="${linkWA}" target="_blank" class="btn-wa" style="text-decoration: none; padding: 6px 10px; font-size: 12px; border-radius: 4px; background: #25D366; color: white; font-weight: bold;">
-                            Tanya WA
-                        </a>
-                        <button
-                            class="add-cart"
-                            onclick="addToCart('${product.name}', '${product.unit}')"
-                            title="Tambah ke daftar tanya"
-                        >
-                            + Keranjang
-                        </button>
-                    </div>
-                </div>
+    productContainer.innerHTML = productList.map(product => `
+        <div class="product-card">
+            <div class="product-image">
+                ${product.icon}
             </div>
-        `;
-    }).join("");
+            <div class="product-info">
+                <div class="product-category">
+                    ${product.category}
+                </div>
+                <h3>${product.name}</h3>
+                <p class="product-description">
+                    ${product.description}
+                </p>
+            </div>
+        </div>
+    `).join("");
 }
 
 // =========================
@@ -155,119 +135,9 @@ function searchProduct() {
 }
 
 // =========================
-// KERANJANG TANYA / BELANJA
-// =========================
-
-function addToCart(name, unit) {
-    const existingProduct = cart.find(item => item.name === name);
-
-    if (existingProduct) {
-        existingProduct.quantity++;
-    } else {
-        cart.push({
-            name: name,
-            unit: unit || 'pcs',
-            quantity: 1
-        });
-    }
-
-    updateCart();
-    alert(`${name} ditambahkan ke daftar keranjang!`);
-}
-
-function updateCart() {
-    const cartCount = document.getElementById("cart-count");
-    const cartItems = document.getElementById("cartItems");
-    const cartTotal = document.getElementById("cartTotal");
-
-    if (!cartCount || !cartItems) return;
-
-    let totalItems = 0;
-    cart.forEach(item => totalItems += item.quantity);
-    cartCount.textContent = totalItems;
-
-    if (cart.length === 0) {
-        cartItems.innerHTML = `
-            <p class="empty-cart">
-                Daftar keranjang masih kosong.
-            </p>
-        `;
-        if (cartTotal) cartTotal.textContent = "-";
-        return;
-    }
-
-    cartItems.innerHTML = "";
-    cart.forEach((item, index) => {
-        cartItems.innerHTML += `
-            <div class="cart-item" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                <div>
-                    <strong>${item.name}</strong>
-                    <p>${item.quantity} ${item.unit}</p>
-                </div>
-                <div>
-                    <button onclick="removeFromCart(${index})" style="padding: 2px 8px;">Hapus</button>
-                </div>
-            </div>
-        `;
-    });
-
-    if (cartTotal) cartTotal.textContent = `${totalItems} Produk`;
-}
-
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCart();
-}
-
-// =========================
-// KONTROL MODAL
-// =========================
-
-function openCart() {
-    const modal = document.getElementById("cartModal");
-    if (modal) modal.style.display = "flex";
-    updateCart();
-}
-
-function closeCart() {
-    const modal = document.getElementById("cartModal");
-    if (modal) modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-    const modal = document.getElementById("cartModal");
-    if (event.target === modal) {
-        closeCart();
-    }
-};
-
-// =========================
-// CHECKOUT / TANYA DAFTAR VIA WHATSAPP
-// =========================
-
-function checkout() {
-    if (cart.length === 0) {
-        alert("Keranjang masih kosong.");
-        return;
-    }
-
-    let pesan = "Halo Mitra Riau Bangunan, saya mau menanyakan harga & stok untuk daftar produk berikut:\n\n";
-
-    cart.forEach((item, index) => {
-        pesan += `${index + 1}. ${item.name} (${item.quantity} ${item.unit})\n`;
-    });
-
-    pesan += "\nMohon informasinya ya, terima kasih!";
-
-    const urlWA = `https://wa.me/${ADMIN_WA}?text=${encodeURIComponent(pesan)}`;
-    window.open(urlWA, "_blank");
-}
-
-// =========================
-// INISIALISASI APPLIKASI
+// INISIALISASI
 // =========================
 
 document.addEventListener("DOMContentLoaded", function() {
     displayProducts();
-    updateCart();
 });

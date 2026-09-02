@@ -39,14 +39,15 @@
             <a href="#tentang">Tentang Kami</a>
         </nav>
 
-        <button
+        <!-- TOMBOL LANGSUNG KE WA -->
+        <a
+            href="https://wa.me/6285376765758?text=Halo%20Mitra%20Riau%20Bangunan,%20saya%20ingin%20bertanya%20seputar%20produk."
+            target="_blank"
             class="cart-btn"
-            onclick="openCart()"
-            type="button"
+            style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background-color: #25D366; color: white;"
         >
-            🛒 Keranjang
-            <span id="cart-count">0</span>
-        </button>
+            💬 Hubungi Kami
+        </a>
 
     </header>
 
@@ -449,7 +450,9 @@
                 </h4>
 
                 <p>
-                    📞 0853-7676-5758
+                    <a href="https://wa.me/6285376765758" target="_blank" style="color: inherit; text-decoration: none;">
+                        📞 0853-7676-5758
+                    </a>
                 </p>
 
                 <p>
@@ -471,57 +474,6 @@
         </div>
 
     </footer>
-
-
-    <!-- =========================
-         CART MODAL (KHUSUS TANYA BARANG)
-    ========================== -->
-
-    <div
-        class="cart-modal"
-        id="cartModal"
-    >
-
-        <div class="cart-content">
-
-            <button
-                class="close-cart"
-                onclick="closeCart()"
-                type="button"
-                aria-label="Tutup keranjang"
-            >
-                ×
-            </button>
-
-            <h2>
-                Daftar Barang yang Ditanyakan
-            </h2>
-
-            <div id="cartItems">
-                <p class="empty-cart">
-                    Keranjang masih kosong.
-                </p>
-            </div>
-
-            <div class="cart-total" style="margin: 15px 0; font-weight: bold;">
-                <span>Total Barang:</span>
-                <span id="cartTotal">0 Produk</span>
-            </div>
-
-            <!-- TOMBOL ACTION -->
-            <button
-                class="checkout-btn"
-                onclick="checkout()"
-                type="button"
-                style="width: 100%; padding: 12px; background: #25D366; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 14px;"
-            >
-                💬 Tanyakan Harga & Stok via WA
-            </button>
-
-        </div>
-
-    </div>
-
 
     <!-- JAVASCRIPT -->
     <script src="script.js"></script>
