@@ -792,7 +792,7 @@ function filterProducts(category) {
 // CHECKOUT VIA TRANSFER BANK
 // =========================
 
-function checkout() {
+//function checkout() {
     if (cart.length === 0) {
         alert("Keranjang masih kosong.");
         return;
@@ -818,5 +818,30 @@ function checkout() {
     const urlWA = `https://wa.me/${adminWA}?text=${encodeURIComponent(pesan)}`;
     
     // Buka WhatsApp di tab baru
+    window.open(urlWA, "_blank");
+//}
+
+function checkout() {
+    if (cart.length === 0) {
+        alert("Keranjang masih kosong.");
+        return;
+    }
+
+    const adminWA = "6285376765758"; // Ganti no WA toko
+
+    let total = 0;
+    let pesan = "Halo Mitra Riau Bangunan, saya mau konfirmasi pembayaran pesanan berikut:\n\n";
+
+    cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        pesan += `${index + 1}. ${item.name} (${item.quantity} ${item.unit || 'pcs'}) = ${formatRupiah(itemTotal)}\n`;
+    });
+
+    pesan += `\n*Total Bayar: ${formatRupiah(total)}*`;
+    pesan += "\n\nMetode Bayar: (QRIS / DANA / ShopeePay / Bank Transfer)";
+    pesan += "\nBerikut saya sertakan bukti pembayarannya. Mohon diproses ya!";
+
+    const urlWA = `https://wa.me/${adminWA}?text=${encodeURIComponent(pesan)}`;
     window.open(urlWA, "_blank");
 }
