@@ -787,3 +787,36 @@ function filterProducts(category) {
         });
     }
 }
+
+// =========================
+// CHECKOUT VIA TRANSFER BANK
+// =========================
+
+function checkout() {
+    if (cart.length === 0) {
+        alert("Keranjang masih kosong.");
+        return;
+    }
+
+    // Nomor WA Admin Mitra Riau Bangunan
+    const adminWA = "6282269995858"; 
+
+    // Hitung total dan susun rincian barang
+    let total = 0;
+    let pesan = "Halo Mitra Riau Bangunan, saya ingin konfirmasi pembayaran transfer untuk pesanan berikut:\n\n";
+
+    cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        pesan += `${index + 1}. ${item.name} (${item.quantity} ${item.unit || 'pcs'}) = ${formatRupiah(itemTotal)}\n`;
+    });
+
+    pesan += `\n*Total Transfer: ${formatRupiah(total)}*`;
+    pesan += "\n\nBerikut saya lampirkan bukti transfernya. Mohon diproses, terima kasih!";
+
+    // Link ke WhatsApp
+    const urlWA = `https://wa.me/${adminWA}?text=${encodeURIComponent(pesan)}`;
+    
+    // Buka WhatsApp di tab baru
+    window.open(urlWA, "_blank");
+}
