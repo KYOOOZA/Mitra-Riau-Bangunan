@@ -20,7 +20,7 @@ body {
 ========================= */
 
 .navbar {
-    height: 75px;
+    height: 80px;
     background: white;
 
     display: flex;
@@ -40,18 +40,11 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    height: 75px;
+    height: 80px;
 }
 
 .logo img {
-    height: 60px;
-    width: auto;
-    object-fit: contain;
-    display: block;
-}
-
-.logo img {
-    height: 70px; /* atur tinggi logo sesuai selera */
+    height: 60px; /* atur tinggi logo sesuai selera */
     width: auto;
     object-fit: contain;
     display: block;
