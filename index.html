@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mitra Riau Bangunan</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+       <div class="logo">
+    <img src="logo.png" alt="Mitra Riau Bangunan">
+    </div>
+
+        <nav>
+            <a href="#home">Beranda</a>
+            <a href="#kategori">Kategori</a>
+            <a href="#produk">Produk</a>
+            <a href="#tentang">Tentang Kami</a>
+        </nav>
+
+        <button class="cart-btn" onclick="openCart()">
+            🛒 Keranjang
+            <span id="cart-count">0</span>
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="hero-small">
+                TOKO BANGUNAN TERPERCAYA
+            </p>
+
+            <h1>
+                Semua Kebutuhan<br>
+                <span>Bangunan Anda</span>
+            </h1>
+
+            <p class="hero-description">
+                Temukan berbagai kebutuhan material bangunan
+                dengan harga terbaik dan produk berkualitas.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#produk" class="btn-primary">
+                    Belanja Sekarang
+                </a>
+
+                <a href="#kategori" class="btn-secondary">
+                    Lihat Kategori
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- KATEGORI -->
+    <section class="category-section" id="kategori">
+
+        <div class="section-title">
+            <p>KATEGORI PRODUK</p>
+            <h2>Belanja Berdasarkan Kategori</h2>
+        </div>
+
+        <div class="categories">
+
+            <div class="category-card">
+                <div class="category-icon">🧱</div>
+                <h3>Semen</h3>
+                <p>Berbagai jenis semen</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🎨</div>
+                <h3>Cat</h3>
+                <p>Cat interior & eksterior</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🔩</div>
+                <h3>Besi</h3>
+                <p>Besi beton & material</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🏠</div>
+                <h3>Atap</h3>
+                <p>Genteng & roofing</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">⬜</div>
+                <h3>Keramik</h3>
+                <p>Keramik lantai & dinding</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🔧</div>
+                <h3>Peralatan</h3>
+                <p>Peralatan pertukangan</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUK -->
+    <section class="product-section" id="produk">
+
+        <div class="section-title">
+            <p>PRODUK PILIHAN</p>
+            <h2>Produk Terlaris</h2>
+        </div>
+
+
+        <!-- SEARCH -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Cari produk..."
+                onkeyup="searchProduct()"
+            >
+        </div>
+
+
+        <div class="products" id="productList">
+
+            <!-- PRODUK 1 -->
+            <div class="product-card" data-name="Semen Tiga Roda">
+
+                <div class="product-image">
+                    🧱
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Semen
+                    </span>
+
+                    <h3>Semen Tiga Roda</h3>
+
+                    <p class="product-description">
+                        Semen berkualitas untuk kebutuhan konstruksi.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <div>
+                            <p class="price">
+                                Rp75.000
+                            </p>
+                            <small>/ sak</small>
+                        </div>
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCart('Semen Tiga Roda', 75000)"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUK 2 -->
+            <div class="product-card" data-name="Cat Tembok">
+
+                <div class="product-image paint">
+                    🎨
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Cat
+                    </span>
+
+                    <h3>Cat Tembok</h3>
+
+                    <p class="product-description">
+                        Cat tembok untuk interior dan eksterior.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <div>
+                            <p class="price">
+                                Rp125.000
+                            </p>
+                            <small>/ kaleng</small>
+                        </div>
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCart('Cat Tembok', 125000)"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUK 3 -->
+            <div class="product-card" data-name="Besi Beton">
+
+                <div class="product-image steel">
+                    🔩
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Besi
+                    </span>
+
+                    <h3>Besi Beton</h3>
+
+                    <p class="product-description">
+                        Besi beton berkualitas untuk konstruksi.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <div>
+                            <p class="price">
+                                Rp85.000
+                            </p>
+                            <small>/ batang</small>
+                        </div>
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCart('Besi Beton', 85000)"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUK 4 -->
+            <div class="product-card" data-name="Keramik Lantai">
+
+                <div class="product-image ceramic">
+                    ⬜
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Keramik
+                    </span>
+
+                    <h3>Keramik Lantai</h3>
+
+                    <p class="product-description">
+                        Keramik lantai dengan berbagai pilihan motif.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <div>
+                            <p class="price">
+                                Rp65.000
+                            </p>
+                            <small>/ dus</small>
+                        </div>
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCart('Keramik Lantai', 65000)"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUK 5 -->
+            <div class="product-card" data-name="Pipa PVC">
+
+                <div class="product-image pipe">
+                    🔧
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Plumbing
+                    </span>
+
+                    <h3>Pipa PVC</h3>
+
+                    <p class="product-description">
+                        Pipa PVC untuk kebutuhan saluran air.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <div>
+                            <p class="price">
+                                Rp45.000
+                            </p>
+                            <small>/ batang</small>
+                        </div>
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCart('Pipa PVC', 45000)"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUK 6 -->
+            <div class="product-card" data-name="Paku Bangunan">
+
+                <div class="product-image nail">
+                    🔨
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Peralatan
+                    </span>
+
+                    <h3>Paku Bangunan</h3>
+
+                    <p class="product-description">
+                        Paku berbagai ukuran untuk kebutuhan bangunan.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <div>
+                            <p class="price">
+                                Rp25.000
+                            </p>
+                            <small>/ kotak</small>
+                        </div>
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCart('Paku Bangunan', 25000)"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TENTANG -->
+    <section class="about-section" id="tentang">
+
+        <div class="about-content">
+
+            <div>
+                <p class="about-small">
+                    TENTANG KAMI
+                </p>
+
+                <h2>
+                    Mitra Riau Bangunan
+                </h2>
+
+                <p>
+                    Mitra Riau Bangunan menyediakan berbagai kebutuhan
+                    material dan perlengkapan bangunan untuk rumah,
+                    proyek, maupun kebutuhan konstruksi lainnya.
+                </p>
+
+                <p>
+                    Kami berkomitmen menyediakan produk berkualitas
+                    dengan harga yang kompetitif.
+                </p>
+            </div>
+
+            <div class="about-box">
+                🏗️
+                <h3>Bangun Lebih Mudah</h3>
+                <p>
+                    Semua kebutuhan bangunan dalam satu tempat.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                <h3>Mitra Riau Bangunan</h3>
+                <p>
+                    Solusi kebutuhan material bangunan Anda.
+                </p>
+            </div>
+
+            <div>
+                <h4>Menu</h4>
+                <p>Beranda</p>
+                <p>Produk</p>
+                <p>Kategori</p>
+            </div>
+
+            <div>
+                <h4>Kontak</h4>
+                <p>📞 08xx-xxxx-xxxx</p>
+                <p>📍 Pekanbaru, Riau</p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Mitra Riau Bangunan
+        </div>
+
+    </footer>
+
+
+    <!-- CART MODAL -->
+    <div class="cart-modal" id="cartModal">
+
+        <div class="cart-content">
+
+            <button
+                class="close-cart"
+                onclick="closeCart()"
+            >
+                ×
+            </button>
+
+            <h2>Keranjang Belanja</h2>
+
+            <div id="cartItems">
+                <p class="empty-cart">
+                    Keranjang masih kosong.
+                </p>
+            </div>
+
+            <div class="cart-total">
+                <strong>Total:</strong>
+                <strong id="cartTotal">
+                    Rp0
+                </strong>
+            </div>
+
+            <button
+                class="checkout-btn"
+                onclick="checkout()"
+            >
+                Checkout
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
