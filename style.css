@@ -49,6 +49,17 @@ body {
     object-fit: contain;
     display: block;
 }
+
+.logo img {
+    height: 70px; /* atur tinggi logo sesuai selera */
+    width: auto;
+    object-fit: contain;
+    display: block;
+    
+    /* Trik menyamarkan background putih logo */
+    mix-blend-mode: multiply;
+}
+
 .navbar nav {
     display: flex;
     gap: 30px;
@@ -779,3 +790,4 @@ footer {
     border-color: #f5a400;
     box-shadow: 0 4px 10px rgba(245, 164, 0, 0.3);
 }
+
