@@ -419,18 +419,61 @@ function filterProducts(category) {
         searchInput.value = "";
     }
 
+
+    let filteredProducts;
+
+
     if (category === "Semua") {
-        displayProducts(products);
-        return;
+
+        filteredProducts = products;
+
+    } else {
+
+        filteredProducts = products.filter(product =>
+            product.category === category
+        );
+
     }
 
-    const filteredProducts = products.filter(product =>
-        product.category === category
-    );
 
     displayProducts(filteredProducts);
-}
 
+    // =========================
+    // UPDATE TOMBOL FILTER
+    // =========================
+
+    const filterButtons =
+        document.querySelectorAll(".filter-btn");
+
+    filterButtons.forEach(button => {
+
+        button.classList.remove("active");
+
+        if (
+            button.textContent.trim() === category
+        ) {
+            button.classList.add("active");
+        }
+
+    });
+
+
+    // =========================
+    // SCROLL KE PRODUK
+    // =========================
+
+    const productSection =
+        document.getElementById("produk");
+
+    if (productSection) {
+
+        productSection.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    }
+
+}
 
 // =========================
 // SEARCH PRODUK
