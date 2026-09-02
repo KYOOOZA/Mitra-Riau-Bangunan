@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -14,9 +15,9 @@
     <!-- NAVBAR -->
     <header class="navbar">
 
-       <div class="logo">
-    <img src="logo.png" alt="Mitra Riau Bangunan">
-    </div>
+        <div class="logo">
+            <img src="logo.png" alt="Mitra Riau Bangunan">
+        </div>
 
         <nav>
             <a href="#home">Beranda</a>
@@ -77,40 +78,60 @@
 
         <div class="categories">
 
-            <div class="category-card">
-                <div class="category-icon">🧱</div>
-                <h3>Semen</h3>
-                <p>Berbagai jenis semen</p>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">🎨</div>
-                <h3>Cat</h3>
-                <p>Cat interior & eksterior</p>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">🔩</div>
-                <h3>Besi</h3>
-                <p>Besi beton & material</p>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">🏠</div>
-                <h3>Atap</h3>
-                <p>Genteng & roofing</p>
-            </div>
-
-            <div class="category-card">
+            <div class="category-card"
+                 onclick="filterProducts('Keramik & Granite')">
                 <div class="category-icon">⬜</div>
-                <h3>Keramik</h3>
-                <p>Keramik lantai & dinding</p>
+                <h3>Keramik & Granite</h3>
+                <p>Keramik lantai, dinding & granite</p>
             </div>
 
-            <div class="category-card">
+            <div class="category-card"
+                 onclick="filterProducts('Pintu, Jendela, & Kusen')">
+                <div class="category-icon">🚪</div>
+                <h3>Pintu, Jendela, & Kusen</h3>
+                <p>Berbagai jenis pintu, jendela & kusen</p>
+            </div>
+
+            <div class="category-card"
+                 onclick="filterProducts('Cat & Alat Pelapis')">
+                <div class="category-icon">🎨</div>
+                <h3>Cat & Alat Pelapis</h3>
+                <p>Cat dan perlengkapan pengecatan</p>
+            </div>
+
+            <div class="category-card"
+                 onclick="filterProducts('Closet, Shower, & Water Heater')">
+                <div class="category-icon">🚿</div>
+                <h3>Closet, Shower, & Water Heater</h3>
+                <p>Kebutuhan kamar mandi</p>
+            </div>
+
+            <div class="category-card"
+                 onclick="filterProducts('Pipa & Toren Air')">
+                <div class="category-icon">💧</div>
+                <h3>Pipa & Toren Air</h3>
+                <p>Pipa, sambungan & toren air</p>
+            </div>
+
+            <div class="category-card"
+                 onclick="filterProducts('Besi & Baja Ringan')">
+                <div class="category-icon">🔩</div>
+                <h3>Besi & Baja Ringan</h3>
+                <p>Besi beton & baja ringan</p>
+            </div>
+
+            <div class="category-card"
+                 onclick="filterProducts('Semen & Bahan Bangunan')">
+                <div class="category-icon">🧱</div>
+                <h3>Semen & Bahan Bangunan</h3>
+                <p>Semen dan berbagai material bangunan</p>
+            </div>
+
+            <div class="category-card"
+                 onclick="filterProducts('Perkakas, Baut & Aksesoris')">
                 <div class="category-icon">🔧</div>
-                <h3>Peralatan</h3>
-                <p>Peralatan pertukangan</p>
+                <h3>Perkakas, Baut & Aksesoris</h3>
+                <p>Perkakas, baut dan aksesoris bangunan</p>
             </div>
 
         </div>
@@ -122,276 +143,68 @@
     <section class="product-section" id="produk">
 
         <div class="section-title">
-            <p>PRODUK PILIHAN</p>
-            <h2>Produk Terlaris</h2>
+            <p>PRODUK KAMI</p>
+            <h2>Daftar Produk</h2>
         </div>
 
 
         <!-- SEARCH -->
         <div class="search-box">
+
             <input
                 type="text"
                 id="searchInput"
                 placeholder="🔍 Cari produk..."
                 onkeyup="searchProduct()"
             >
+
         </div>
 
 
-        <div class="products" id="productList">
-
-            <!-- PRODUK 1 -->
-            <div class="product-card" data-name="Semen Tiga Roda">
-
-                <div class="product-image">
-                    🧱
-                </div>
-
-                <div class="product-info">
-
-                    <span class="product-category">
-                        Semen
-                    </span>
-
-                    <h3>Semen Tiga Roda</h3>
-
-                    <p class="product-description">
-                        Semen berkualitas untuk kebutuhan konstruksi.
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <div>
-                            <p class="price">
-                                Rp75.000
-                            </p>
-                            <small>/ sak</small>
-                        </div>
-
-                        <button
-                            class="add-cart"
-                            onclick="addToCart('Semen Tiga Roda', 75000)"
-                        >
-                            +
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUK 2 -->
-            <div class="product-card" data-name="Cat Tembok">
-
-                <div class="product-image paint">
-                    🎨
-                </div>
-
-                <div class="product-info">
-
-                    <span class="product-category">
-                        Cat
-                    </span>
-
-                    <h3>Cat Tembok</h3>
-
-                    <p class="product-description">
-                        Cat tembok untuk interior dan eksterior.
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <div>
-                            <p class="price">
-                                Rp125.000
-                            </p>
-                            <small>/ kaleng</small>
-                        </div>
-
-                        <button
-                            class="add-cart"
-                            onclick="addToCart('Cat Tembok', 125000)"
-                        >
-                            +
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUK 3 -->
-            <div class="product-card" data-name="Besi Beton">
-
-                <div class="product-image steel">
-                    🔩
-                </div>
-
-                <div class="product-info">
-
-                    <span class="product-category">
-                        Besi
-                    </span>
-
-                    <h3>Besi Beton</h3>
-
-                    <p class="product-description">
-                        Besi beton berkualitas untuk konstruksi.
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <div>
-                            <p class="price">
-                                Rp85.000
-                            </p>
-                            <small>/ batang</small>
-                        </div>
-
-                        <button
-                            class="add-cart"
-                            onclick="addToCart('Besi Beton', 85000)"
-                        >
-                            +
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUK 4 -->
-            <div class="product-card" data-name="Keramik Lantai">
-
-                <div class="product-image ceramic">
-                    ⬜
-                </div>
-
-                <div class="product-info">
-
-                    <span class="product-category">
-                        Keramik
-                    </span>
-
-                    <h3>Keramik Lantai</h3>
-
-                    <p class="product-description">
-                        Keramik lantai dengan berbagai pilihan motif.
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <div>
-                            <p class="price">
-                                Rp65.000
-                            </p>
-                            <small>/ dus</small>
-                        </div>
-
-                        <button
-                            class="add-cart"
-                            onclick="addToCart('Keramik Lantai', 65000)"
-                        >
-                            +
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUK 5 -->
-            <div class="product-card" data-name="Pipa PVC">
-
-                <div class="product-image pipe">
-                    🔧
-                </div>
-
-                <div class="product-info">
-
-                    <span class="product-category">
-                        Plumbing
-                    </span>
-
-                    <h3>Pipa PVC</h3>
-
-                    <p class="product-description">
-                        Pipa PVC untuk kebutuhan saluran air.
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <div>
-                            <p class="price">
-                                Rp45.000
-                            </p>
-                            <small>/ batang</small>
-                        </div>
-
-                        <button
-                            class="add-cart"
-                            onclick="addToCart('Pipa PVC', 45000)"
-                        >
-                            +
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUK 6 -->
-            <div class="product-card" data-name="Paku Bangunan">
-
-                <div class="product-image nail">
-                    🔨
-                </div>
-
-                <div class="product-info">
-
-                    <span class="product-category">
-                        Peralatan
-                    </span>
-
-                    <h3>Paku Bangunan</h3>
-
-                    <p class="product-description">
-                        Paku berbagai ukuran untuk kebutuhan bangunan.
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <div>
-                            <p class="price">
-                                Rp25.000
-                            </p>
-                            <small>/ kotak</small>
-                        </div>
-
-                        <button
-                            class="add-cart"
-                            onclick="addToCart('Paku Bangunan', 25000)"
-                        >
-                            +
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
+        <!-- FILTER KATEGORI -->
+        <div class="category-filter" id="categoryFilter">
+
+            <button onclick="filterProducts('Semua')">
+                Semua
+            </button>
+
+            <button onclick="filterProducts('Keramik & Granite')">
+                Keramik & Granite
+            </button>
+
+            <button onclick="filterProducts('Pintu, Jendela, & Kusen')">
+                Pintu, Jendela, & Kusen
+            </button>
+
+            <button onclick="filterProducts('Cat & Alat Pelapis')">
+                Cat & Alat Pelapis
+            </button>
+
+            <button onclick="filterProducts('Closet, Shower, & Water Heater')">
+                Closet, Shower, & Water Heater
+            </button>
+
+            <button onclick="filterProducts('Pipa & Toren Air')">
+                Pipa & Toren Air
+            </button>
+
+            <button onclick="filterProducts('Besi & Baja Ringan')">
+                Besi & Baja Ringan
+            </button>
+
+            <button onclick="filterProducts('Semen & Bahan Bangunan')">
+                Semen & Bahan Bangunan
+            </button>
+
+            <button onclick="filterProducts('Perkakas, Baut & Aksesoris')">
+                Perkakas, Baut & Aksesoris
+            </button>
 
         </div>
+
+
+        <!-- PRODUK AKAN DIBUAT OTOMATIS OLEH JAVASCRIPT -->
+        <div class="products" id="productList"></div>
 
     </section>
 
@@ -402,6 +215,7 @@
         <div class="about-content">
 
             <div>
+
                 <p class="about-small">
                     TENTANG KAMI
                 </p>
@@ -420,14 +234,19 @@
                     Kami berkomitmen menyediakan produk berkualitas
                     dengan harga yang kompetitif.
                 </p>
+
             </div>
 
             <div class="about-box">
+
                 🏗️
+
                 <h3>Bangun Lebih Mudah</h3>
+
                 <p>
                     Semua kebutuhan bangunan dalam satu tempat.
                 </p>
+
             </div>
 
         </div>
@@ -441,23 +260,32 @@
         <div class="footer-content">
 
             <div>
+
                 <h3>Mitra Riau Bangunan</h3>
+
                 <p>
                     Solusi kebutuhan material bangunan Anda.
                 </p>
+
             </div>
 
             <div>
+
                 <h4>Menu</h4>
+
                 <p>Beranda</p>
                 <p>Produk</p>
                 <p>Kategori</p>
+
             </div>
 
             <div>
+
                 <h4>Kontak</h4>
-                <p>📞 08xx-xxxx-xxxx</p>
+
+                <p>📞 0822-6999-5858</p>
                 <p>📍 Pekanbaru, Riau</p>
+
             </div>
 
         </div>
@@ -484,16 +312,21 @@
             <h2>Keranjang Belanja</h2>
 
             <div id="cartItems">
+
                 <p class="empty-cart">
                     Keranjang masih kosong.
                 </p>
+
             </div>
 
             <div class="cart-total">
+
                 <strong>Total:</strong>
+
                 <strong id="cartTotal">
                     Rp0
                 </strong>
+
             </div>
 
             <button
@@ -512,3 +345,4 @@
 
 </body>
 </html>
+```
