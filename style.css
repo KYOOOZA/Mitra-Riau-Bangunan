@@ -741,3 +741,41 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================
+   CATEGORY FILTERS (PRODUK)
+========================= */
+
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.filter-btn {
+    background: white;
+    border: 1px solid #ddd;
+    color: #444;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.filter-btn:hover {
+    background: #fff4db;
+    border-color: #f5a400;
+    color: #f5a400;
+}
+
+.filter-btn.active {
+    background: #f5a400;
+    color: white;
+    border-color: #f5a400;
+    box-shadow: 0 4px 10px rgba(245, 164, 0, 0.3);
+}

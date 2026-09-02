@@ -1,22 +1,35 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mitra Riau Bangunan</title>
+    <title>Mitra Riau Bangunan | Toko Bangunan Pekanbaru</title>
+
+    <meta
+        name="description"
+        content="Mitra Riau Bangunan menyediakan berbagai kebutuhan material dan perlengkapan bangunan di Pekanbaru, Riau."
+    >
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
     <header class="navbar">
 
         <div class="logo">
-            <img src="logo.png" alt="Mitra Riau Bangunan">
+            <a href="#home">
+                <img
+                    src="logo.png"
+                    alt="Mitra Riau Bangunan"
+                >
+            </a>
         </div>
 
         <nav>
@@ -26,7 +39,11 @@
             <a href="#tentang">Tentang Kami</a>
         </nav>
 
-        <button class="cart-btn" onclick="openCart()">
+        <button
+            class="cart-btn"
+            onclick="openCart()"
+            type="button"
+        >
             🛒 Keranjang
             <span id="cart-count">0</span>
         </button>
@@ -34,7 +51,10 @@
     </header>
 
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================== -->
+
     <section class="hero" id="home">
 
         <div class="hero-content">
@@ -50,17 +70,26 @@
 
             <p class="hero-description">
                 Temukan berbagai kebutuhan material bangunan
-                dengan harga terbaik dan produk berkualitas.
+                dengan harga terbaik dan produk berkualitas
+                untuk rumah maupun proyek Anda.
             </p>
 
             <div class="hero-buttons">
-                <a href="#produk" class="btn-primary">
+
+                <a
+                    href="#produk"
+                    class="btn-primary"
+                >
                     Belanja Sekarang
                 </a>
 
-                <a href="#kategori" class="btn-secondary">
+                <a
+                    href="#kategori"
+                    class="btn-secondary"
+                >
                     Lihat Kategori
                 </a>
+
             </div>
 
         </div>
@@ -68,70 +97,201 @@
     </section>
 
 
-    <!-- KATEGORI -->
-    <section class="category-section" id="kategori">
+    <!-- =========================
+         KATEGORI
+    ========================== -->
+
+    <section
+        class="category-section"
+        id="kategori"
+    >
 
         <div class="section-title">
+
             <p>KATEGORI PRODUK</p>
-            <h2>Belanja Berdasarkan Kategori</h2>
+
+            <h2>
+                Belanja Berdasarkan Kategori
+            </h2>
+
         </div>
+
 
         <div class="categories">
 
-            <div class="category-card"
-                 onclick="filterProducts('Keramik & Granite')">
-                <div class="category-icon">⬜</div>
-                <h3>Keramik & Granite</h3>
-                <p>Keramik lantai, dinding & granite</p>
+            <!-- KERAMIK -->
+
+            <div
+                class="category-card"
+                onclick="filterProducts('Keramik & Granite')"
+            >
+
+                <div class="category-icon">
+                    ⬜
+                </div>
+
+                <h3>
+                    Keramik & Granite
+                </h3>
+
+                <p>
+                    Keramik lantai, dinding & granite
+                </p>
+
             </div>
 
-            <div class="category-card"
-                 onclick="filterProducts('Pintu, Jendela, & Kusen')">
-                <div class="category-icon">🚪</div>
-                <h3>Pintu, Jendela, & Kusen</h3>
-                <p>Berbagai jenis pintu, jendela & kusen</p>
+
+            <!-- PINTU -->
+
+            <div
+                class="category-card"
+                onclick="filterProducts('Pintu, Jendela, & Kusen')"
+            >
+
+                <div class="category-icon">
+                    🚪
+                </div>
+
+                <h3>
+                    Pintu, Jendela, & Kusen
+                </h3>
+
+                <p>
+                    Berbagai jenis pintu, jendela & kusen
+                </p>
+
             </div>
 
-            <div class="category-card"
-                 onclick="filterProducts('Cat & Alat Pelapis')">
-                <div class="category-icon">🎨</div>
-                <h3>Cat & Alat Pelapis</h3>
-                <p>Cat dan perlengkapan pengecatan</p>
+
+            <!-- CAT -->
+
+            <div
+                class="category-card"
+                onclick="filterProducts('Cat & Alat Pelapis')"
+            >
+
+                <div class="category-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    Cat & Alat Pelapis
+                </h3>
+
+                <p>
+                    Cat dan perlengkapan pengecatan
+                </p>
+
             </div>
 
-            <div class="category-card"
-                 onclick="filterProducts('Closet, Shower, & Water Heater')">
-                <div class="category-icon">🚿</div>
-                <h3>Closet, Shower, & Water Heater</h3>
-                <p>Kebutuhan kamar mandi</p>
+
+            <!-- KAMAR MANDI -->
+
+            <div
+                class="category-card"
+                onclick="filterProducts('Closet, Shower, & Water Heater')"
+            >
+
+                <div class="category-icon">
+                    🚿
+                </div>
+
+                <h3>
+                    Closet, Shower, & Water Heater
+                </h3>
+
+                <p>
+                    Kebutuhan kamar mandi
+                </p>
+
             </div>
 
-            <div class="category-card"
-                 onclick="filterProducts('Pipa & Toren Air')">
-                <div class="category-icon">💧</div>
-                <h3>Pipa & Toren Air</h3>
-                <p>Pipa, sambungan & toren air</p>
+
+            <!-- PIPA -->
+
+            <div
+                class="category-card"
+                onclick="filterProducts('Pipa & Toren Air')"
+            >
+
+                <div class="category-icon">
+                    💧
+                </div>
+
+                <h3>
+                    Pipa & Toren Air
+                </h3>
+
+                <p>
+                    Pipa, sambungan & toren air
+                </p>
+
             </div>
 
-            <div class="category-card"
-                 onclick="filterProducts('Besi & Baja Ringan')">
-                <div class="category-icon">🔩</div>
-                <h3>Besi & Baja Ringan</h3>
-                <p>Besi beton & baja ringan</p>
+
+            <!-- BESI -->
+
+            <div
+                class="category-card"
+                onclick="filterProducts('Besi & Baja Ringan')"
+            >
+
+                <div class="category-icon">
+                    🔩
+                </div>
+
+                <h3>
+                    Besi & Baja Ringan
+                </h3>
+
+                <p>
+                    Besi beton & baja ringan
+                </p>
+
             </div>
 
-            <div class="category-card"
-                 onclick="filterProducts('Semen & Bahan Bangunan')">
-                <div class="category-icon">🧱</div>
-                <h3>Semen & Bahan Bangunan</h3>
-                <p>Semen dan berbagai material bangunan</p>
+
+            <!-- SEMEN -->
+
+            <div
+                class="category-card"
+                onclick="filterProducts('Semen & Bahan Bangunan')"
+            >
+
+                <div class="category-icon">
+                    🧱
+                </div>
+
+                <h3>
+                    Semen & Bahan Bangunan
+                </h3>
+
+                <p>
+                    Semen dan material bangunan
+                </p>
+
             </div>
 
-            <div class="category-card"
-                 onclick="filterProducts('Perkakas, Baut & Aksesoris')">
-                <div class="category-icon">🔧</div>
-                <h3>Perkakas, Baut & Aksesoris</h3>
-                <p>Perkakas, baut dan aksesoris bangunan</p>
+
+            <!-- PERKAKAS -->
+
+            <div
+                class="category-card"
+                onclick="filterProducts('Perkakas, Baut & Aksesoris')"
+            >
+
+                <div class="category-icon">
+                    🔧
+                </div>
+
+                <h3>
+                    Perkakas, Baut & Aksesoris
+                </h3>
+
+                <p>
+                    Perkakas, baut dan aksesoris
+                </p>
+
             </div>
 
         </div>
@@ -139,78 +299,141 @@
     </section>
 
 
-    <!-- PRODUK -->
-    <section class="product-section" id="produk">
+    <!-- =========================
+         PRODUK
+    ========================== -->
+
+    <section
+        class="product-section"
+        id="produk"
+    >
 
         <div class="section-title">
+
             <p>PRODUK KAMI</p>
-            <h2>Daftar Produk</h2>
+
+            <h2>
+                Daftar Produk
+            </h2>
+
         </div>
 
 
         <!-- SEARCH -->
+
         <div class="search-box">
 
             <input
                 type="text"
                 id="searchInput"
-                placeholder="🔍 Cari produk..."
-                onkeyup="searchProduct()"
+                placeholder="🔍 Cari nama produk atau kategori..."
+                oninput="searchProduct()"
+                autocomplete="off"
             >
 
         </div>
 
 
         <!-- FILTER KATEGORI -->
-        <div class="category-filter" id="categoryFilter">
 
-            <button onclick="filterProducts('Semua')">
+        <div
+            class="category-filters"
+            id="categoryFilter"
+        >
+
+            <button
+                type="button"
+                class="filter-btn active"
+                onclick="filterProducts('Semua')"
+            >
                 Semua
             </button>
 
-            <button onclick="filterProducts('Keramik & Granite')">
+            <button
+                type="button"
+                class="filter-btn"
+                onclick="filterProducts('Keramik & Granite')"
+            >
                 Keramik & Granite
             </button>
 
-            <button onclick="filterProducts('Pintu, Jendela, & Kusen')">
+            <button
+                type="button"
+                class="filter-btn"
+                onclick="filterProducts('Pintu, Jendela, & Kusen')"
+            >
                 Pintu, Jendela, & Kusen
             </button>
 
-            <button onclick="filterProducts('Cat & Alat Pelapis')">
+            <button
+                type="button"
+                class="filter-btn"
+                onclick="filterProducts('Cat & Alat Pelapis')"
+            >
                 Cat & Alat Pelapis
             </button>
 
-            <button onclick="filterProducts('Closet, Shower, & Water Heater')">
+            <button
+                type="button"
+                class="filter-btn"
+                onclick="filterProducts('Closet, Shower, & Water Heater')"
+            >
                 Closet, Shower, & Water Heater
             </button>
 
-            <button onclick="filterProducts('Pipa & Toren Air')">
+            <button
+                type="button"
+                class="filter-btn"
+                onclick="filterProducts('Pipa & Toren Air')"
+            >
                 Pipa & Toren Air
             </button>
 
-            <button onclick="filterProducts('Besi & Baja Ringan')">
+            <button
+                type="button"
+                class="filter-btn"
+                onclick="filterProducts('Besi & Baja Ringan')"
+            >
                 Besi & Baja Ringan
             </button>
 
-            <button onclick="filterProducts('Semen & Bahan Bangunan')">
+            <button
+                type="button"
+                class="filter-btn"
+                onclick="filterProducts('Semen & Bahan Bangunan')"
+            >
                 Semen & Bahan Bangunan
             </button>
 
-            <button onclick="filterProducts('Perkakas, Baut & Aksesoris')">
+            <button
+                type="button"
+                class="filter-btn"
+                onclick="filterProducts('Perkakas, Baut & Aksesoris')"
+            >
                 Perkakas, Baut & Aksesoris
             </button>
 
         </div>
 
 
-        <!-- PRODUK AKAN DIBUAT OTOMATIS OLEH JAVASCRIPT -->
-        <div class="products" id="productList"></div>
+        <!-- PRODUK DIBUAT OTOMATIS OLEH JAVASCRIPT -->
+
+        <div
+            class="products"
+            id="productList"
+        ></div>
 
     </section>
 
 
-    <!-- TENTANG -->
-    <section class="about-section" id="tentang">
+    <!-- =========================
+         TENTANG KAMI
+    ========================== -->
+
+    <section
+        class="about-section"
+        id="tentang"
+    >
 
         <div class="about-content">
 
@@ -225,9 +448,10 @@
                 </h2>
 
                 <p>
-                    Mitra Riau Bangunan menyediakan berbagai kebutuhan
-                    material dan perlengkapan bangunan untuk rumah,
-                    proyek, maupun kebutuhan konstruksi lainnya.
+                    Mitra Riau Bangunan menyediakan berbagai
+                    kebutuhan material dan perlengkapan bangunan
+                    untuk rumah, proyek, maupun kebutuhan
+                    konstruksi lainnya.
                 </p>
 
                 <p>
@@ -237,14 +461,18 @@
 
             </div>
 
+
             <div class="about-box">
 
                 🏗️
 
-                <h3>Bangun Lebih Mudah</h3>
+                <h3>
+                    Bangun Lebih Mudah
+                </h3>
 
                 <p>
-                    Semua kebutuhan bangunan dalam satu tempat.
+                    Semua kebutuhan bangunan
+                    dalam satu tempat.
                 </p>
 
             </div>
@@ -254,14 +482,22 @@
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer>
 
         <div class="footer-content">
 
+
+            <!-- INFO -->
+
             <div>
 
-                <h3>Mitra Riau Bangunan</h3>
+                <h3>
+                    Mitra Riau Bangunan
+                </h3>
 
                 <p>
                     Solusi kebutuhan material bangunan Anda.
@@ -269,47 +505,95 @@
 
             </div>
 
+
+            <!-- MENU -->
+
             <div>
 
-                <h4>Menu</h4>
+                <h4>
+                    Menu
+                </h4>
 
-                <p>Beranda</p>
-                <p>Produk</p>
-                <p>Kategori</p>
+                <p>
+                    <a href="#home">
+                        Beranda
+                    </a>
+                </p>
+
+                <p>
+                    <a href="#produk">
+                        Produk
+                    </a>
+                </p>
+
+                <p>
+                    <a href="#kategori">
+                        Kategori
+                    </a>
+                </p>
 
             </div>
 
+
+            <!-- KONTAK -->
+
             <div>
 
-                <h4>Kontak</h4>
+                <h4>
+                    Kontak
+                </h4>
 
-                <p>📞 0822-6999-5858</p>
-                <p>📍Jl. Dharma Bakti No.24, Labuh Baru Bar., Payung Sekaki, Kota Pekanbaru, Riau 28292</p>
+                <p>
+                    📞 0822-6999-5858
+                </p>
+
+                <p>
+                    📍 Jl. Dharma Bakti No.24,
+                    Labuh Baru Bar., Payung Sekaki,
+                    Kota Pekanbaru, Riau 28292
+                </p>
 
             </div>
 
         </div>
 
+
         <div class="copyright">
-            © 2026 Mitra Riau Bangunan
+
+            © 2026 Mitra Riau Bangunan.
+            Semua Hak Dilindungi.
+
         </div>
 
     </footer>
 
 
-    <!-- CART MODAL -->
-    <div class="cart-modal" id="cartModal">
+    <!-- =========================
+         CART MODAL
+    ========================== -->
+
+    <div
+        class="cart-modal"
+        id="cartModal"
+    >
 
         <div class="cart-content">
+
 
             <button
                 class="close-cart"
                 onclick="closeCart()"
+                type="button"
+                aria-label="Tutup keranjang"
             >
                 ×
             </button>
 
-            <h2>Keranjang Belanja</h2>
+
+            <h2>
+                Keranjang Belanja
+            </h2>
+
 
             <div id="cartItems">
 
@@ -319,9 +603,12 @@
 
             </div>
 
+
             <div class="cart-total">
 
-                <strong>Total:</strong>
+                <strong>
+                    Total:
+                </strong>
 
                 <strong id="cartTotal">
                     Rp0
@@ -329,9 +616,11 @@
 
             </div>
 
+
             <button
                 class="checkout-btn"
                 onclick="checkout()"
+                type="button"
             >
                 Checkout
             </button>
@@ -341,8 +630,10 @@
     </div>
 
 
+    <!-- JAVASCRIPT -->
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
-```
