@@ -3,9 +3,7 @@
 // =========================
 
 const products = [
-    // =========================
     // KERAMIK & GRANITE
-    // =========================
     {
         id: 1,
         name: "Keramik 60x60",
@@ -43,9 +41,7 @@ const products = [
         description: "Granite tile premium ukuran 60x60 cm."
     },
 
-    // =========================
     // PINTU, JENDELA & KUSEN
-    // =========================
     {
         id: 5,
         name: "Pintu PVC",
@@ -83,9 +79,7 @@ const products = [
         description: "Jendela aluminium untuk rumah."
     },
 
-    // =========================
     // CAT & ALAT PELAPIS
-    // =========================
     {
         id: 9,
         name: "Cat Tembok Interior",
@@ -123,9 +117,7 @@ const products = [
         description: "Roller untuk mengecat dinding."
     },
 
-    // =========================
     // CLOSET, SHOWER & WATER HEATER
-    // =========================
     {
         id: 13,
         name: "Closet Duduk",
@@ -163,9 +155,7 @@ const products = [
         description: "Pemanas air untuk kebutuhan rumah."
     },
 
-    // =========================
     // PIPA & TOREN AIR
-    // =========================
     {
         id: 17,
         name: "Pipa PVC 1/2 Inch",
@@ -203,9 +193,7 @@ const products = [
         description: "Toren air kapasitas 500 liter."
     },
 
-    // =========================
     // BESI & BAJA RINGAN
-    // =========================
     {
         id: 21,
         name: "Besi Beton 8mm",
@@ -243,9 +231,7 @@ const products = [
         description: "Baja ringan profil C75."
     },
 
-    // =========================
     // SEMEN & BAHAN BANGUNAN
-    // =========================
     {
         id: 25,
         name: "Semen Tiga Roda",
@@ -283,9 +269,7 @@ const products = [
         description: "Batu bata untuk dinding bangunan."
     },
 
-    // =========================
     // PERKAKAS, BAUT & AKSESORIS
-    // =========================
     {
         id: 29,
         name: "Paku Bangunan",
@@ -324,11 +308,7 @@ const products = [
     }
 ];
 
-
-// =========================
-// KERANJANG
-// =========================
-
+// STATE KERANJANG
 let cart = [];
 
 
@@ -337,71 +317,50 @@ let cart = [];
 // =========================
 
 function displayProducts(productList = products) {
-
-    const productContainer =
-        document.getElementById("productList");
-
+    const productContainer = document.getElementById("productList");
     if (!productContainer) return;
 
     if (productList.length === 0) {
-
         productContainer.innerHTML = `
             <div class="empty-cart">
                 Produk tidak ditemukan.
             </div>
         `;
-
         return;
     }
 
     productContainer.innerHTML = productList.map(product => {
-
         return `
             <div class="product-card">
-
                 <div class="product-image">
                     ${product.icon}
                 </div>
-
                 <div class="product-info">
-
                     <div class="product-category">
                         ${product.category}
                     </div>
-
                     <h3>${product.name}</h3>
-
                     <p class="product-description">
                         ${product.description}
                     </p>
-
                     <div class="product-bottom">
-
                         <div>
                             <div class="price">
                                 ${formatRupiah(product.price)}
                             </div>
-
-                            <small>
-                                / ${product.unit}
-                            </small>
+                            <small>/ ${product.unit}</small>
                         </div>
-
                         <button
                             class="add-cart"
-                            onclick="addToCart('${product.name}', ${product.price})"
+                            onclick="addToCart('${product.name}', ${product.price}, '${product.unit}')"
                             title="Tambah ke keranjang"
                         >
                             +
                         </button>
-
                     </div>
-
                 </div>
-
             </div>
         `;
-
     }).join("");
 }
 
@@ -411,91 +370,51 @@ function displayProducts(productList = products) {
 // =========================
 
 function filterProducts(category) {
-
-    const searchInput =
-        document.getElementById("searchInput");
-
-    if (searchInput) {
-        searchInput.value = "";
-    }
-
+    const searchInput = document.getElementById("searchInput");
+    if (searchInput) searchInput.value = "";
 
     let filteredProducts;
-
-
     if (category === "Semua") {
-
         filteredProducts = products;
-
     } else {
-
         filteredProducts = products.filter(product =>
             product.category === category
         );
-
     }
-
 
     displayProducts(filteredProducts);
 
-    // =========================
-    // UPDATE TOMBOL FILTER
-    // =========================
-
-    const filterButtons =
-        document.querySelectorAll(".filter-btn");
-
+    // Update kelas active tombol filter
+    const filterButtons = document.querySelectorAll(".filter-btn");
     filterButtons.forEach(button => {
-
         button.classList.remove("active");
-
-        if (
-            button.textContent.trim() === category
-        ) {
+        if (button.textContent.trim().toLowerCase() === category.toLowerCase()) {
             button.classList.add("active");
         }
-
     });
 
-
-    // =========================
-    // SCROLL KE PRODUK
-    // =========================
-
-    const productSection =
-        document.getElementById("produk");
-
+    // Scroll otomatis ke daftar produk
+    const productSection = document.getElementById("produk");
     if (productSection) {
-
-        productSection.scrollIntoView({
-            behavior: "smooth"
-        });
-
+        productSection.scrollIntoView({ behavior: "smooth" });
     }
-
 }
+
 
 // =========================
 // SEARCH PRODUK
 // =========================
 
 function searchProduct() {
-
-    const input =
-        document.getElementById("searchInput");
-
+    const input = document.getElementById("searchInput");
     if (!input) return;
 
-    const keyword =
-        input.value.toLowerCase().trim();
-
+    const keyword = input.value.toLowerCase().trim();
     const filteredProducts = products.filter(product => {
-
         return (
             product.name.toLowerCase().includes(keyword) ||
             product.category.toLowerCase().includes(keyword)
         );
-
     });
 
     displayProducts(filteredProducts);
@@ -503,323 +422,120 @@ function searchProduct() {
 
 
 // =========================
-// TAMBAHKAN KE KERANJANG
+// KERANJANG BELANJA
 // =========================
 
-function addToCart(name, price) {
-
-    const existingProduct = cart.find(
-        item => item.name === name
-    );
+function addToCart(name, price, unit) {
+    const existingProduct = cart.find(item => item.name === name);
 
     if (existingProduct) {
-
         existingProduct.quantity++;
-
     } else {
-
         cart.push({
             name: name,
             price: price,
+            unit: unit || 'pcs',
             quantity: 1
         });
-
     }
 
     updateCart();
-
-    alert(
-        name + " berhasil ditambahkan ke keranjang!"
-    );
+    alert(`${name} berhasil ditambahkan ke keranjang!`);
 }
 
-
-// =========================
-// UPDATE KERANJANG
-// =========================
-
 function updateCart() {
+    const cartCount = document.getElementById("cart-count");
+    const cartItems = document.getElementById("cartItems");
+    const cartTotal = document.getElementById("cartTotal");
 
-    const cartCount =
-        document.getElementById("cart-count");
+    if (!cartCount || !cartItems || !cartTotal) return;
 
-    const cartItems =
-        document.getElementById("cartItems");
-
-    const cartTotal =
-        document.getElementById("cartTotal");
-
-    if (!cartCount || !cartItems || !cartTotal) {
-        return;
-    }
-
-    // Hitung jumlah barang
+    // Hitung total item
     let totalItems = 0;
-
-    cart.forEach(item => {
-        totalItems += item.quantity;
-    });
-
+    cart.forEach(item => totalItems += item.quantity);
     cartCount.textContent = totalItems;
 
-
-    // Kalau kosong
+    // Keranjang Kosong
     if (cart.length === 0) {
-
         cartItems.innerHTML = `
             <p class="empty-cart">
                 Keranjang masih kosong.
             </p>
         `;
-
         cartTotal.textContent = "Rp0";
-
         return;
     }
 
-
-    // Tampilkan produk
+    // Render barang di keranjang
     cartItems.innerHTML = "";
-
     let total = 0;
-
-    cart.forEach((item, index) => {
-
-        const itemTotal =
-            item.price * item.quantity;
-
-        total += itemTotal;
-
-        cartItems.innerHTML += `
-            <div class="cart-item">
-
-                <div>
-                    <strong>
-                        ${item.name}
-                    </strong>
-
-                    <p>
-                        ${item.quantity} ×
-                        ${formatRupiah(item.price)}
-                    </p>
-                </div>
-
-                <div>
-                    <strong>
-                        ${formatRupiah(itemTotal)}
-                    </strong>
-
-                    <button
-                        onclick="removeFromCart(${index})"
-                    >
-                        Hapus
-                    </button>
-                </div>
-
-            </div>
-        `;
-
-    });
-
-    cartTotal.textContent =
-        formatRupiah(total);
-}
-
-
-// =========================
-// HAPUS PRODUK DARI KERANJANG
-// =========================
-
-function removeFromCart(index) {
-
-    cart.splice(index, 1);
-
-    updateCart();
-}
-
-
-// =========================
-// FORMAT RUPIAH
-// =========================
-
-function formatRupiah(number) {
-
-    return new Intl.NumberFormat(
-        "id-ID",
-        {
-            style: "currency",
-            currency: "IDR",
-            maximumFractionDigits: 0
-        }
-    ).format(number);
-}
-
-
-// =========================
-// MODAL KERANJANG
-// =========================
-
-function openCart() {
-
-    const modal =
-        document.getElementById("cartModal");
-
-    if (modal) {
-        modal.style.display = "flex";
-    }
-
-    updateCart();
-}
-
-
-function closeCart() {
-
-    const modal =
-        document.getElementById("cartModal");
-
-    if (modal) {
-        modal.style.display = "none";
-    }
-}
-
-
-// =========================
-// TUTUP MODAL KETIKA KLIK LUAR
-// =========================
-
-window.onclick = function(event) {
-
-    const modal =
-        document.getElementById("cartModal");
-
-    if (event.target === modal) {
-        closeCart();
-    }
-
-};
-
-
-// =========================
-// CHECKOUT
-// =========================
-
-function checkout() {
-
-    if (cart.length === 0) {
-
-        alert(
-            "Keranjang masih kosong."
-        );
-
-        return;
-    }
-
-    alert(
-        "Checkout berhasil dibuat! " +
-        "Fitur pembayaran akan kita tambahkan nanti."
-    );
-}
-
-
-// =========================
-// JALANKAN SAAT HALAMAN DIBUKA
-// =========================
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function() {
-
-        displayProducts();
-
-        updateCart();
-
-    }
-);
-
-// =========================
-// FILTER KATEGORI (UPDATED)
-// =========================
-
-function filterProducts(category) {
-
-    const searchInput = document.getElementById("searchInput");
-
-    if (searchInput) {
-        searchInput.value = "";
-    }
-
-    let filteredProducts;
-
-    if (category === "Semua") {
-        filteredProducts = products;
-    } else {
-        filteredProducts = products.filter(product =>
-            product.category === category
-        );
-    }
-
-    displayProducts(filteredProducts);
-
-    // =========================
-    // UPDATE TOMBOL FILTER
-    // =========================
-
-    const filterButtons = document.querySelectorAll(".filter-btn");
-
-    filterButtons.forEach(button => {
-        button.classList.remove("active");
-
-        // Perbaikan: gunakan .includes() agar perbandingan nama kategori presisi
-        if (button.textContent.trim().toLowerCase() === category.toLowerCase()) {
-            button.classList.add("active");
-        }
-    });
-
-    // =========================
-    // SCROLL KE PRODUK
-    // =========================
-
-    const productSection = document.getElementById("produk");
-
-    if (productSection) {
-        productSection.scrollIntoView({
-            behavior: "smooth"
-        });
-    }
-}
-
-// =========================
-// CHECKOUT VIA TRANSFER BANK
-// =========================
-
-//function checkout() {
-    if (cart.length === 0) {
-        alert("Keranjang masih kosong.");
-        return;
-    }
-
-    // Nomor WA Admin Mitra Riau Bangunan
-    const adminWA = "6285376765758"; 
-
-    // Hitung total dan susun rincian barang
-    let total = 0;
-    let pesan = "Halo Mitra Riau Bangunan, saya ingin konfirmasi pembayaran transfer untuk pesanan berikut:\n\n";
 
     cart.forEach((item, index) => {
         const itemTotal = item.price * item.quantity;
         total += itemTotal;
-        pesan += `${index + 1}. ${item.name} (${item.quantity} ${item.unit || 'pcs'}) = ${formatRupiah(itemTotal)}\n`;
+
+        cartItems.innerHTML += `
+            <div class="cart-item">
+                <div>
+                    <strong>${item.name}</strong>
+                    <p>${item.quantity} × ${formatRupiah(item.price)}</p>
+                </div>
+                <div style="text-align: right;">
+                    <strong>${formatRupiah(itemTotal)}</strong><br>
+                    <button onclick="removeFromCart(${index})" style="margin-top: 5px;">Hapus</button>
+                </div>
+            </div>
+        `;
     });
 
-    pesan += `\n*Total Transfer: ${formatRupiah(total)}*`;
-    pesan += "\n\nBerikut saya lampirkan bukti transfernya. Mohon diproses, terima kasih!";
+    cartTotal.textContent = formatRupiah(total);
+}
 
-    // Link ke WhatsApp
-    const urlWA = `https://wa.me/${adminWA}?text=${encodeURIComponent(pesan)}`;
-    
-    // Buka WhatsApp di tab baru
-    window.open(urlWA, "_blank");
-//}
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+
+// =========================
+// HELPER FORMAT RUPIAH
+// =========================
+
+function formatRupiah(number) {
+    return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        maximumFractionDigits: 0
+    }).format(number);
+}
+
+
+// =========================
+// KONTROL MODAL
+// =========================
+
+function openCart() {
+    const modal = document.getElementById("cartModal");
+    if (modal) modal.style.display = "flex";
+    updateCart();
+}
+
+function closeCart() {
+    const modal = document.getElementById("cartModal");
+    if (modal) modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById("cartModal");
+    if (event.target === modal) {
+        closeCart();
+    }
+};
+
+
+// =========================
+// CHECKOUT VIA WHATSAPP
+// =========================
 
 function checkout() {
     if (cart.length === 0) {
@@ -827,7 +543,7 @@ function checkout() {
         return;
     }
 
-    const adminWA = "6285376765758"; // Ganti no WA toko
+    const adminWA = "6285376765758";
 
     let total = 0;
     let pesan = "Halo Mitra Riau Bangunan, saya mau konfirmasi pembayaran pesanan berikut:\n\n";
@@ -835,7 +551,7 @@ function checkout() {
     cart.forEach((item, index) => {
         const itemTotal = item.price * item.quantity;
         total += itemTotal;
-        pesan += `${index + 1}. ${item.name} (${item.quantity} ${item.unit || 'pcs'}) = ${formatRupiah(itemTotal)}\n`;
+        pesan += `${index + 1}. ${item.name} (${item.quantity} ${item.unit}) = ${formatRupiah(itemTotal)}\n`;
     });
 
     pesan += `\n*Total Bayar: ${formatRupiah(total)}*`;
@@ -845,3 +561,13 @@ function checkout() {
     const urlWA = `https://wa.me/${adminWA}?text=${encodeURIComponent(pesan)}`;
     window.open(urlWA, "_blank");
 }
+
+
+// =========================
+// INISIALISASI APPLIKASI
+// =========================
+
+document.addEventListener("DOMContentLoaded", function() {
+    displayProducts();
+    updateCart();
+});
