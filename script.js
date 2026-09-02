@@ -799,7 +799,7 @@ function checkout() {
     }
 
     // Nomor WA Admin Mitra Riau Bangunan
-    const adminWA = "6282269995858"; 
+    const adminWA = "6285376765758"; 
 
     // Hitung total dan susun rincian barang
     let total = 0;
