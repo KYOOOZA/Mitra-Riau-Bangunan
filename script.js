@@ -46,7 +46,7 @@ const products = [
   { id: 41, name: "Kerikil", category: "Semen & Bahan Bangunan", image: "semen/Kerikil.jpg", description: "Kerikil untuk campuran beton." },
   { id: 42, name: "Batu Bata", category: "Semen & Bahan Bangunan", image: "semen/Batu Bata.jpeg", description: "Batu bata untuk dinding bangunan." },
   { id: 43, name: "Gypsum Eboard 8mm", category: "Semen & Bahan Bangunan", image: "semen/Gypsum.jpeg", description: "Gypsum Eboard 8mm untuk dinding bangunan." },
-  { id: 44, name: "Dempul RJ Wall Putty", category: "Semen & Bahan Bangunan", image: "semen/Dempul RJ Wall Putty .jpg", description: "Dempul untuk permukaan dinding.", sizes: ["0,5 Kg", "1 Kg", "5 Kg", "25 Kg"] },
+  { id: 44, name: "Dempul RJ Wall Putty", category: "Semen & Bahan Bangunan", image: "semen/Dempul RJ Wall Putty.jpg", description: "Dempul untuk permukaan dinding.", sizes: ["0,5 Kg", "1 Kg", "5 Kg", "25 Kg"] },
 
   // PERKAKAS, BAUT & AKSESORIS
   { id: 45, name: "Paku Bangunan", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Paku Bangunan.jpg", description: "Paku untuk berbagai kebutuhan bangunan." },
@@ -62,9 +62,6 @@ const ADMIN_WA = "6285376765758";
 // =========================
 
 function displayProducts(productList = products) {
-
-    <img src="${imagePath}" alt="${product.name}" onclick="openImageModal(this.src)" style="cursor: pointer;" title="Klik untuk memperbesar gambar" onerror="this.onerror=null; this.src='https://dummyimage.com/400x300/e2e2e2/000000.png&text=Gambar+Tidak+Tersedia';" loading="lazy"></img>
-
   const productContainer = document.getElementById("productList");
 
   if (!productContainer) return;
@@ -98,7 +95,15 @@ function displayProducts(productList = products) {
     return `
       <div class="product-card" style="display: flex; flex-direction: column; justify-content: space-between;">
         <div class="product-image">
-          <img src="${imagePath}" alt="${product.name}" onerror="this.onerror=null; this.src='https://dummyimage.com/400x300/e2e2e2/000000.png&text=Gambar+Tidak+Tersedia';" loading="lazy">
+          <img 
+            src="${imagePath}" 
+            alt="${product.name}" 
+            onclick="openImageModal(this.src)" 
+            style="cursor: pointer;" 
+            title="Klik untuk memperbesar gambar" 
+            onerror="this.onerror=null; this.src='https://dummyimage.com/400x300/e2e2e2/000000.png&text=Gambar+Tidak+Tersedia';" 
+            loading="lazy"
+          >
         </div>
         <div class="product-info" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
           <div>
