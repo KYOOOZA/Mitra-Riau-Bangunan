@@ -55,14 +55,16 @@ const products = [
     { id: 30, name: "Semen Conch", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Semen Conch.jpeg", description: "Semen untuk berbagai kebutuhan konstruksi." },
     { id: 31, name: "Semen Merdeka", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Semen Merdeka.jpeg", description: "Semen untuk berbagai kebutuhan konstruksi." },
     { id: 32, name: "Semen Padang", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Semen Padang.jpg", description: "Semen untuk pekerjaan bangunan." },
-    { id: 33, name: "Pasir Bangunan", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Pasir Bangunan.jpg", description: "Pasir untuk campuran konstruksi." },
-    { id: 34, name: "Batu Bata", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Batu Bata.jpeg", description: "Batu bata untuk dinding bangunan." },
+    { id: 33, name: "Pasir Pasang", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Pasir Pasang.jpeg", description: "Pasir Pasang untuk campuran konstruksi." },
+    { id: 34, name: "Pasir Cor", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Pasir Cor.jpeg", description: "Pasir Cor untuk pekerjaan konstruksi." },
+    { id: 35, name: "Kerikil", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Kerikil.jpg", description: "Kerikil untuk campuran beton." },
+    { id: 36, name: "Batu Bata", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Batu Bata.jpeg", description: "Batu bata untuk dinding bangunan." },
 
     // PERKAKAS, BAUT & AKSESORIS
-    { id: 35, name: "Paku Bangunan", category: "Perkakas, Baut & Aksesoris", image: "images/placeholder.jpg", description: "Paku untuk berbagai kebutuhan bangunan." },
-    { id: 36, name: "Baut Besi", category: "Perkakas, Baut & Aksesoris", image: "images/placeholder.jpg", description: "Baut untuk kebutuhan konstruksi." },
-    { id: 37, name: "Obeng Set", category: "Perkakas, Baut & Aksesoris", image: "images/placeholder.jpg", description: "Set obeng untuk pekerjaan rumah." },
-    { id: 38, name: "Tang Kombinasi", category: "Perkakas, Baut & Aksesoris", image: "images/placeholder.jpg", description: "Tang kombinasi untuk berbagai pekerjaan." }
+    { id: 37, name: "Paku Bangunan", category: "Perkakas, Baut & Aksesoris", image: "images/placeholder.jpg", description: "Paku untuk berbagai kebutuhan bangunan." },
+    { id: 38, name: "Baut Besi", category: "Perkakas, Baut & Aksesoris", image: "images/placeholder.jpg", description: "Baut untuk kebutuhan konstruksi." },
+    { id: 39, name: "Obeng Set", category: "Perkakas, Baut & Aksesoris", image: "images/placeholder.jpg", description: "Set obeng untuk pekerjaan rumah." },
+    { id: 40, name: "Tang Kombinasi", category: "Perkakas, Baut & Aksesoris", image: "images/placeholder.jpg", description: "Tang kombinasi untuk berbagai pekerjaan." }
 ];
 
 const ADMIN_WA = "6285376765758";
