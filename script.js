@@ -55,7 +55,7 @@ const products = [
     { id: 37, name: "Semen Conch", category: "Semen & Bahan Bangunan", image: "semen/Semen Conch.jpeg", description: "Semen untuk berbagai kebutuhan konstruksi." },
     { id: 38, name: "Semen Merdeka", category: "Semen & Bahan Bangunan", image: "semen/Semen Merdeka.jpeg", description: "Semen untuk berbagai kebutuhan konstruksi." },
     { id: 39, name: "Semen Padang", category: "Semen & Bahan Bangunan", image: "semen/Semen Padang.jpg", description: "Semen untuk pekerjaan bangunan." },
-    { id: 40, name: "Pasir Pasang", category: "Semen & Bahan Bangunan", image: "semen/Pasir Pasang.jpeg", description: "Pasir Pasang untuk campuran konstruksi." },
+    { id: 40, name: "Pasir Pasang", category: "Semen & Bahan Bangunan", image: "semen/Pasir Pasang.jpg", description: "Pasir Pasang untuk campuran konstruksi." },
     { id: 41, name: "Pasir Cor", category: "Semen & Bahan Bangunan", image: "semen/Pasir Cor.jpeg", description: "Pasir Cor untuk pekerjaan konstruksi." },
     { id: 42, name: "Kerikil", category: "Semen & Bahan Bangunan", image: "semen/Kerikil.jpg", description: "Kerikil untuk campuran beton." },
     { id: 43, name: "Batu Bata", category: "Semen & Bahan Bangunan", image: "semen/Batu Bata.jpeg", description: "Batu bata untuk dinding bangunan." },
