@@ -1,5 +1,5 @@
 // =========================
-// DATA PRODUK (Siap untuk Foto)
+// DATA PRODUK
 // =========================
 
 const products = [
@@ -51,14 +51,14 @@ const products = [
     { id: 35, name: "Atap Spandek", category: "Besi & Baja Ringan", image: "images/placeholder.jpg", description: "Atap Spandek." },
     { id: 36, name: "Atap Kodian", category: "Besi & Baja Ringan", image: "images/placeholder.jpg", description: "Atap Kodian." },
 
-    // SEMEN & BAHAN BANGUNAN
-    { id: 37, name: "Semen Conch", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Semen Conch.jpeg", description: "Semen untuk berbagai kebutuhan konstruksi." },
-    { id: 38, name: "Semen Merdeka", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Semen Merdeka.jpeg", description: "Semen untuk berbagai kebutuhan konstruksi." },
-    { id: 39, name: "Semen Padang", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Semen Padang.jpg", description: "Semen untuk pekerjaan bangunan." },
-    { id: 40, name: "Pasir Pasang", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Pasir Pasang.jpeg", description: "Pasir Pasang untuk campuran konstruksi." },
-    { id: 41, name: "Pasir Cor", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Pasir Cor.jpeg", description: "Pasir Cor untuk pekerjaan konstruksi." },
-    { id: 42, name: "Kerikil", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Kerikil.jpg", description: "Kerikil untuk campuran beton." },
-    { id: 43, name: "Batu Bata", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Batu Bata.jpeg", description: "Batu bata untuk dinding bangunan." },
+   // SEMEN & BAHAN BANGUNAN
+    { id: 37, name: "Semen Conch", category: "Semen & Bahan Bangunan", image: "semen/Semen Conch.jpeg", description: "Semen untuk berbagai kebutuhan konstruksi." },
+    { id: 38, name: "Semen Merdeka", category: "Semen & Bahan Bangunan", image: "semen/Semen Merdeka.jpeg", description: "Semen untuk berbagai kebutuhan konstruksi." },
+    { id: 39, name: "Semen Padang", category: "Semen & Bahan Bangunan", image: "semen/Semen Padang.jpg", description: "Semen untuk pekerjaan bangunan." },
+    { id: 40, name: "Pasir Pasang", category: "Semen & Bahan Bangunan", image: "semen/Pasir Pasang.jpeg", description: "Pasir Pasang untuk campuran konstruksi." },
+    { id: 41, name: "Pasir Cor", category: "Semen & Bahan Bangunan", image: "semen/Pasir Cor.jpeg", description: "Pasir Cor untuk pekerjaan konstruksi." },
+    { id: 42, name: "Kerikil", category: "Semen & Bahan Bangunan", image: "semen/Kerikil.jpg", description: "Kerikil untuk campuran beton." },
+    { id: 43, name: "Batu Bata", category: "Semen & Bahan Bangunan", image: "semen/Batu Bata.jpeg", description: "Batu bata untuk dinding bangunan." },
 
     // PERKAKAS, BAUT & AKSESORIS
     { id: 44, name: "Paku Bangunan", category: "Perkakas, Baut & Aksesoris", image: "images/placeholder.jpg", description: "Paku untuk berbagai kebutuhan bangunan." },
@@ -70,7 +70,7 @@ const products = [
 const ADMIN_WA = "6285376765758";
 
 // =========================
-// TAMPILKAN PRODUK DENGAN TOMBOL WA OTOMATIS
+// TAMPILKAN PRODUK
 // =========================
 
 function displayProducts(productList = products) {
@@ -87,14 +87,16 @@ function displayProducts(productList = products) {
     }
 
     productContainer.innerHTML = productList.map(product => {
-        // Pesan otomatis yang akan terisi di WA pelanggan
         const textWA = encodeURIComponent(`Halo Mitra Riau Bangunan, saya mau tanya harga & stok untuk produk: *${product.name}*`);
         const linkWA = `https://wa.me/${ADMIN_WA}?text=${textWA}`;
+
+        // Menggunakan encodeURI agar karakter seperti & dan spasi pada path ter-decode dengan benar di HP
+        const imagePath = encodeURI(product.image);
 
         return `
             <div class="product-card">
                 <div class="product-image">
-                    <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/200?text=Foto+Produk'" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="${imagePath}" alt="${product.name}" onerror="this.onerror=null; this.src='https://dummyimage.com/400x300/e2e2e2/000000.png&text=Gambar+Tidak+Tersedia';" loading="lazy">
                 </div>
                 <div class="product-info">
                     <div class="product-category">
@@ -104,7 +106,7 @@ function displayProducts(productList = products) {
                     <p class="product-description">
                         ${product.description}
                     </p>
-                    <a href="${linkWA}" target="_blank" style="display: block; width: 100%; text-align: center; padding: 10px; margin-top: 10px; background-color: #25D366; color: white; border-radius: 6px; font-weight: bold; text-decoration: none; font-size: 13px;">
+                    <a href="${linkWA}" target="_blank" style="display: block; width: 100%; text-align: center; padding: 10px; margin-top: auto; background-color: #25D366; color: white; border-radius: 6px; font-weight: bold; text-decoration: none; font-size: 13px;">
                         💬 Tanya Produk Ini
                     </a>
                 </div>
