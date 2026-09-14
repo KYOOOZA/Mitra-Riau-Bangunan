@@ -508,6 +508,31 @@ footer {
 
 
 /* =========================
+   ANIMASI NAMA MEREK BERGERAK
+========================= */
+
+.moving-brand-text {
+    font-size: 18px;
+    font-weight: 800;
+    color: #f5a400;
+    letter-spacing: 1px;
+    display: inline-block;
+    animation: floatBrand 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes floatBrand {
+    0% {
+        transform: translateY(0);
+        text-shadow: 0 0 2px rgba(245, 164, 0, 0.2);
+    }
+    100% {
+        transform: translateY(-4px) scale(1.02);
+        text-shadow: 0 3px 10px rgba(245, 164, 0, 0.5);
+    }
+}
+
+
+/* =========================
    RESPONSIVE (TABLET & HP)
 ========================= */
 
@@ -536,6 +561,10 @@ footer {
 
     .navbar nav {
         display: none; /* Sembunyikan navigasi teks di HP agar rapi */
+    }
+
+    .moving-brand-text {
+        font-size: 15px; /* Menyesuaikan ukuran teks nama di layar HP */
     }
 
     .hero {
