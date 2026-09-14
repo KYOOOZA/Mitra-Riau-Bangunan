@@ -19,16 +19,17 @@ const products = [
   { id: 9, name: "Cat Tembok Eksterior", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat eksterior tahan terhadap cuaca." },
   { id: 10, name: "Cat Kayu & Besi", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat untuk permukaan kayu dan besi." },
   { id: 11, name: "Roller Cat", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Roller untuk mengecat dinding." },
+  { id: 12, name: "Cat Pilox", category: "Cat & Alat Pelapis", image: "cat/diton.jpg", description: "Pilox adalah cat semprot aerosol praktis yang digunakan untuk mewarnai, melindungi, dan memperindah berbagai permukaan seperti logam, kayu, hingga plastik tanpa perlu kuas.", color: ["Merah", "Biru", "Hitam", "Kuning", "Dan lain-lain"] },
 
   // CLOSET, SHOWER & WATER HEATER
-  { id: 12, name: "Closet Duduk", category: "Closet, Shower, & Water Heater", image: "images/placeholder.jpg", description: "Closet duduk untuk kamar mandi." },
-  { id: 13, name: "Closet Jongkok", category: "Closet, Shower, & Water Heater", image: "images/placeholder.jpg", description: "Closet jongkok berkualitas." },
-  { id: 14, name: "Shower Kamar Mandi", category: "Closet, Shower, & Water Heater", image: "images/placeholder.jpg", description: "Shower kamar mandi modern." },
-  { id: 15, name: "Water Heater", category: "Closet, Shower, & Water Heater", image: "images/placeholder.jpg", description: "Pemanas air untuk kebutuhan rumah." },
+  { id: 13, name: "Closet Duduk", category: "Closet, Shower, & Water Heater", image: "closet/closet kia.jpg", description: "Closet duduk untuk kamar mandi." },
+  { id: 14, name: "Closet Jongkok", category: "Closet, Shower, & Water Heater", image: "closet/jongkok.png", description: "Closet jongkok berkualitas." },
+  { id: 15, name: "Shower Kamar Mandi", category: "Closet, Shower, & Water Heater", image: "closet/shower mandi.jpg", description: "Shower kamar mandi modern." },
+  { id: 16, name: "Water Heater", category: "Closet, Shower, & Water Heater", image: "closet/water heater.png", description: "Pemanas air untuk kebutuhan rumah." },
 
   // PIPA & TOREN AIR
-  { id: 16, name: "Pipa PVC", category: "Pipa & Toren Air", image: "images/placeholder.jpg", description: "Pipa PVC untuk instalasi air.", sizes: ["1/2 Inch", "3/4 Inch", "1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
-  { id: 17, name: "Toren Penguin", category: "Pipa & Toren Air", image: "pipa/Toren Penguin.jpg", description: "Toren air kapasitas.", sizes: ["250 Liter", "500 Liter", "750 Liter", "1000 Liter", "2000 Liter"] },
+  { id: 17, name: "Pipa PVC", category: "Pipa & Toren Air", image: "pipa/pipajpg.jpg", description: "Pipa PVC untuk instalasi air.", sizes: ["1/2 Inch", "3/4 Inch", "1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
+  { id: 18, name: "Toren Penguin", category: "Pipa & Toren Air", image: "pipa/Toren Penguin.jpg", description: "Toren air kapasitas.", sizes: ["250 Liter", "500 Liter", "750 Liter", "1000 Liter", "2000 Liter"] },
 
   // BESI & BAJA RINGAN
   { id: 31, name: "Besi Beton Ulir", category: "Besi & Baja Ringan", image: "besi/Besi Beton Ulir.jpeg", description: "Besi beton ulir untuk kebutuhan konstruksi.", sizes: ["8mm", "10mm", "12mm", "16mm", "19mm"] },
@@ -78,14 +79,17 @@ function displayProducts(productList = products) {
   productContainer.innerHTML = productList.map(product => {
     const imagePath = encodeURI(product.image);
 
-    // Generate Dropdown HTML jika produk memiliki array sizes
-    let sizeSelectHTML = "";
-    if (product.sizes && product.sizes.length > 0) {
-      const options = product.sizes.map(size => `<option value="${size}">${size}</option>`).join("");
-      sizeSelectHTML = `
+    // Ambil opsi dari array sizes atau color
+    const variants = product.sizes || product.color;
+    const labelTitle = product.color ? "Pilih Warna:" : "Pilih Ukuran / Tipe:";
+
+    let variantSelectHTML = "";
+    if (variants && variants.length > 0) {
+      const options = variants.map(item => `<option value="${item}">${item}</option>`).join("");
+      variantSelectHTML = `
         <div style="margin: 10px 0 15px 0;">
-          <label style="display: block; font-size: 11px; font-weight: bold; color: #555; margin-bottom: 4px; text-transform: uppercase;">Pilih Ukuran / Tipe:</label>
-          <select id="size-${product.id}" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; font-size: 13px; background-color: #fff; cursor: pointer;">
+          <label style="display: block; font-size: 11px; font-weight: bold; color: #555; margin-bottom: 4px; text-transform: uppercase;">${labelTitle}</label>
+          <select id="variant-${product.id}" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; font-size: 13px; background-color: #fff; cursor: pointer;">
             ${options}
           </select>
         </div>
@@ -116,7 +120,7 @@ function displayProducts(productList = products) {
             </p>
           </div>
           <div>
-            ${sizeSelectHTML}
+            ${variantSelectHTML}
             <button onclick="askProduct(${product.id})" style="display: block; width: 100%; text-align: center; padding: 10px; background-color: #25D366; color: white; border: none; border-radius: 6px; font-weight: bold; font-size: 13px; cursor: pointer;">
               💬 Tanya Produk Ini
             </button>
@@ -135,13 +139,14 @@ function askProduct(productId) {
   const product = products.find(p => p.id === productId);
   if (!product) return;
 
-  let sizeInfo = "";
-  const selectEl = document.getElementById(`size-${productId}`);
+  let variantInfo = "";
+  const selectEl = document.getElementById(`variant-${productId}`);
   if (selectEl) {
-    sizeInfo = ` (Ukuran: ${selectEl.value})`;
+    const label = product.color ? "Warna" : "Ukuran";
+    variantInfo = ` (${label}: ${selectEl.value})`;
   }
 
-  const textWA = encodeURIComponent(`Halo Mitra Riau Bangunan, saya mau tanya harga & stok untuk produk: *${product.name}*${sizeInfo}`);
+  const textWA = encodeURIComponent(`Halo Mitra Riau Bangunan, saya mau tanya harga & stok untuk produk: *${product.name}*${variantInfo}`);
   const linkWA = `https://wa.me/${ADMIN_WA}?text=${textWA}`;
 
   window.open(linkWA, "_blank");
@@ -186,10 +191,12 @@ function searchProduct() {
   const keyword = input.value.toLowerCase().trim();
   const filteredProducts = products.filter(product => {
     const hasMatchingSize = product.sizes ? product.sizes.some(s => s.toLowerCase().includes(keyword)) : false;
+    const hasMatchingColor = product.color ? product.color.some(c => c.toLowerCase().includes(keyword)) : false;
     return (
       product.name.toLowerCase().includes(keyword) ||
       product.category.toLowerCase().includes(keyword) ||
-      hasMatchingSize
+      hasMatchingSize ||
+      hasMatchingColor
     );
   });
 
