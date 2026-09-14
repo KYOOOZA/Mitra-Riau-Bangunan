@@ -56,7 +56,7 @@ const products = [
     { id: 31, name: "Semen Merdeka", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Semen Merdeka.jpeg", description: "Semen untuk berbagai kebutuhan konstruksi." },
     { id: 32, name: "Semen Padang", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Semen Padang.jpg", description: "Semen untuk pekerjaan bangunan." },
     { id: 33, name: "Pasir Bangunan", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Pasir Bangunan.jpg", description: "Pasir untuk campuran konstruksi." },
-    { id: 34, name: "Batu Bata", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Batu Bata.jpg", description: "Batu bata untuk dinding bangunan." },
+    { id: 34, name: "Batu Bata", category: "Semen & Bahan Bangunan", image: "/Semen & Bahan Bangunan/Batu Bata.jpeg", description: "Batu bata untuk dinding bangunan." },
 
     // PERKAKAS, BAUT & AKSESORIS
     { id: 35, name: "Paku Bangunan", category: "Perkakas, Baut & Aksesoris", image: "images/placeholder.jpg", description: "Paku untuk berbagai kebutuhan bangunan." },
