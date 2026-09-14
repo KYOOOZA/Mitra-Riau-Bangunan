@@ -44,15 +44,16 @@ const products = [
     { id: 30, name: "Toren Air 2000 Liter", category: "Pipa & Toren Air", image: "images/placeholder.jpg", description: "Toren air kapasitas 2000 liter." },
 
     // BESI & BAJA RINGAN
-    { id: 27, name: "Besi Beton 8mm", category: "Besi & Baja Ringan", image: "images/placeholder.jpg", description: "Besi beton ukuran 8 mm." },
-    { id: 28, name: "Besi Beton 10mm", category: "Besi & Baja Ringan", image: "images/placeholder.jpg", description: "Besi beton ukuran 10 mm." },
-    { id: 29, name: "Besi Beton 12mm", category: "Besi & Baja Ringan", image: "images/placeholder.jpg", description: "Besi beton ukuran 12 mm." },
-    { id: 30, name: "Baja Ringan 75x75", category: "Besi & Baja Ringan", image: "images/placeholder.jpg", description: "Baja ringan profil 75x75." },
-    { id: 31, name: "Atap Spandek", category: "Besi & Baja Ringan", image: "images/placeholder.jpg", description: "Atap Spandek." },
-    { id: 32, name: "Atap Kodian", category: "Besi & Baja Ringan", image: "images/placeholder.jpg", description: "Atap Kodian." },
+    { id: 30, name: "Besi Beton 8mm", category: "Besi & Baja Ringan", image: "images/placeholder.jpg", description: "Besi beton ukuran 8 mm." },
+    { id: 31, name: "Besi Beton 10mm", category: "Besi & Baja Ringan", image: "images/placeholder.jpg", description: "Besi beton ukuran 10 mm." },
+    { id: 32, name: "Besi Beton 12mm", category: "Besi & Baja Ringan", image: "images/placeholder.jpg", description: "Besi beton ukuran 12 mm." },
+    { id: 33, name: "Baja Ringan 75x75", category: "Besi & Baja Ringan", image: "images/placeholder.jpg", description: "Baja ringan profil 75x75." },
+    { id: 34, name: "Atap Spandek", category: "Besi & Baja Ringan", image: "images/placeholder.jpg", description: "Atap Spandek." },
+    { id: 35, name: "Atap Kodian", category: "Besi & Baja Ringan", image: "images/placeholder.jpg", description: "Atap Kodian." },
 
     // SEMEN & BAHAN BANGUNAN
-    { id: 31, name: "Semen Tiga Roda", category: "Semen & Bahan Bangunan", image: "images/placeholder.jpg", description: "Semen untuk berbagai kebutuhan konstruksi." },
+    { id: 30, name: "Semen Conch", category: "Semen & Bahan Bangunan", image: "images/placeholder.jpg", description: "Semen untuk berbagai kebutuhan konstruksi." },
+    { id: 31, name: "Semen Merdeka", category: "Semen & Bahan Bangunan", image: "Semen Merdeka.jpeg", description: "Semen untuk berbagai kebutuhan konstruksi." },
     { id: 32, name: "Semen Padang", category: "Semen & Bahan Bangunan", image: "images/placeholder.jpg", description: "Semen untuk pekerjaan bangunan." },
     { id: 33, name: "Pasir Bangunan", category: "Semen & Bahan Bangunan", image: "images/placeholder.jpg", description: "Pasir untuk campuran konstruksi." },
     { id: 34, name: "Batu Bata", category: "Semen & Bahan Bangunan", image: "images/placeholder.jpg", description: "Batu bata untuk dinding bangunan." },
