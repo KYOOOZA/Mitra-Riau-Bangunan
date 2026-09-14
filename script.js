@@ -28,7 +28,7 @@ const products = [
 
   // PIPA & TOREN AIR
   { id: 16, name: "Pipa PVC", category: "Pipa & Toren Air", image: "images/placeholder.jpg", description: "Pipa PVC untuk instalasi air.", sizes: ["1/2 Inch", "3/4 Inch", "1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
-  { id: 17, name: "Toren Air", category: "Pipa & Toren Air", image: "images/placeholder.jpg", description: "Toren air kapasitas.", sizes: ["250 Liter", "500 Liter", "750 Liter", "1000 Liter", "2000 Liter"] },
+  { id: 17, name: "Toren Penguin", category: "Pipa & Toren Air", image: "pipa/Toren Penguin.jpg", description: "Toren air kapasitas.", sizes: ["250 Liter", "500 Liter", "750 Liter", "1000 Liter", "2000 Liter"] },
 
   // BESI & BAJA RINGAN
   { id: 31, name: "Besi Beton Ulir", category: "Besi & Baja Ringan", image: "besi/Besi Beton Ulir.jpeg", description: "Besi beton ulir untuk kebutuhan konstruksi.", sizes: ["8mm", "10mm", "12mm", "16mm", "19mm"] },
@@ -45,7 +45,7 @@ const products = [
   { id: 40, name: "Pasir Cor", category: "Semen & Bahan Bangunan", image: "semen/Pasir Cor.jpeg", description: "Pasir Cor untuk pekerjaan konstruksi." },
   { id: 41, name: "Kerikil", category: "Semen & Bahan Bangunan", image: "semen/Kerikil.jpg", description: "Kerikil untuk campuran beton." },
   { id: 42, name: "Batu Bata", category: "Semen & Bahan Bangunan", image: "semen/Batu Bata.jpeg", description: "Batu bata untuk dinding bangunan." },
-  { id: 43, name: "Gypsum", category: "Semen & Bahan Bangunan", image: "semen/Gypsum.jpeg", description: "Gypsum untuk dinding bangunan." },
+  { id: 43, name: "Gypsum Eboard 8mm", category: "Semen & Bahan Bangunan", image: "semen/Gypsum.jpeg", description: "Gypsum Eboard 8mm untuk dinding bangunan." },
   { id: 44, name: "Dempul RJ Wall Putty", category: "Semen & Bahan Bangunan", image: "semen/Dempul RJ Wall Putty .jpg", description: "Dempul untuk permukaan dinding.", sizes: ["0,5 Kg", "1 Kg", "5 Kg", "25 Kg"] },
 
   // PERKAKAS, BAUT & AKSESORIS
@@ -62,6 +62,9 @@ const ADMIN_WA = "6285376765758";
 // =========================
 
 function displayProducts(productList = products) {
+
+    <img src="${imagePath}" alt="${product.name}" onclick="openImageModal(this.src)" style="cursor: pointer;" title="Klik untuk memperbesar gambar" onerror="this.onerror=null; this.src='https://dummyimage.com/400x300/e2e2e2/000000.png&text=Gambar+Tidak+Tersedia';" loading="lazy"></img>
+
   const productContainer = document.getElementById("productList");
 
   if (!productContainer) return;
@@ -186,6 +189,26 @@ function searchProduct() {
   });
 
   displayProducts(filteredProducts);
+}
+
+// =========================
+// FUNGSI ZOOM GAMBAR (MODAL)
+// =========================
+
+function openImageModal(imgSrc) {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  if (modal && modalImg) {
+    modalImg.src = imgSrc;
+    modal.style.display = "flex";
+  }
+}
+
+function closeImageModal() {
+  const modal = document.getElementById("imageModal");
+  if (modal) {
+    modal.style.display = "none";
+  }
 }
 
 // =========================
