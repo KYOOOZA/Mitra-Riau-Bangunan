@@ -13,6 +13,46 @@
     >
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- STYLE TAMBAHAN UNTUK DROPDOWN UKURAN PRODUK -->
+    <style>
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .variant-container {
+            margin: 10px 0 15px 0;
+            background-color: #f8f9fa;
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: 1px solid #e9ecef;
+        }
+        .variant-label {
+            display: block;
+            font-size: 11px;
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .variant-select {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 13px;
+            color: #212529;
+            background-color: #ffffff;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.2s ease-in-out;
+        }
+        .variant-select:focus {
+            border-color: #25D366;
+        }
+    </style>
 </head>
 
 <body>
@@ -325,7 +365,7 @@
         </div>
 
 
-        <!-- KONTEN PRODUK (DIBUAT DENGAN MENU VARIANT DARI JAVASCRIPT) -->
+        <!-- KONTEN PRODUK (DIBUAT OTOMATIS OLEH JAVASCRIPT BESERTA PILIHAN UKURANNYA) -->
 
         <div
             class="products"
