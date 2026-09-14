@@ -422,6 +422,48 @@ body {
     font-size: 14px;
 }
 
+/* Mengatur pembagian area kiri & kanan */
+.location-card {
+  display: flex;
+  gap: 32px;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* =========================
+    LOKASI & PETA
+========================= */
+
+/* Informasi teks di sebelah kiri */
+.location-info {
+  flex: 1;
+}
+
+/* Container peta di sebelah kanan */
+.map-container {
+  flex: 1;
+  width: 100%;
+  min-height: 350px;
+}
+
+/* Memastikan iframe mengisi penuh container */
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+}
+
+/* Tampilan responsif untuk HP */
+@media (max-width: 768px) {
+  .location-card {
+    flex-direction: column;
+  }
+  .map-container {
+    height: 300px;
+  }
+}
+
 
 /* =========================
    FOOTER
