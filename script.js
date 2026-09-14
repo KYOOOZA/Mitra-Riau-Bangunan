@@ -46,12 +46,13 @@ const products = [
   { id: 41, name: "Kerikil", category: "Semen & Bahan Bangunan", image: "semen/Kerikil.jpg", description: "Kerikil untuk campuran beton." },
   { id: 42, name: "Batu Bata", category: "Semen & Bahan Bangunan", image: "semen/Batu Bata.jpeg", description: "Batu bata untuk dinding bangunan." },
   { id: 43, name: "Gypsum", category: "Semen & Bahan Bangunan", image: "semen/Gypsum.jpeg", description: "Gypsum untuk dinding bangunan." },
+  { id: 44, name: "Dempul RJ Wall Putty", category: "Semen & Bahan Bangunan", image: "semen/Dempul RJ Wall Putty .jpg", description: "Dempul untuk permukaan dinding.", sizes: ["0,5 Kg", "1 Kg", "5 Kg", "25 Kg"] },
 
   // PERKAKAS, BAUT & AKSESORIS
-  { id: 44, name: "Paku Bangunan", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Paku Bangunan.jpg", description: "Paku untuk berbagai kebutuhan bangunan." },
-  { id: 45, name: "Baut Besi", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Baut Besi.jpg", description: "Baut untuk kebutuhan konstruksi." },
-  { id: 46, name: "Obeng Set", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Obeng Set.jpg", description: "Set obeng untuk pekerjaan rumah." },
-  { id: 47, name: "Tang Kombinasi", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Tang Kombinasi.jpg", description: "Tang kombinasi untuk berbagai pekerjaan." }
+  { id: 45, name: "Paku Bangunan", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Paku Bangunan.jpg", description: "Paku untuk berbagai kebutuhan bangunan." },
+  { id: 46, name: "Baut Besi", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Baut Besi.jpg", description: "Baut untuk kebutuhan konstruksi." },
+  { id: 47, name: "Obeng Set", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Obeng Set.jpg", description: "Set obeng untuk pekerjaan rumah." },
+  { id: 48, name: "Tang Kombinasi", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Tang Kombinasi.jpg", description: "Tang kombinasi untuk berbagai pekerjaan." }
 ];
 
 const ADMIN_WA = "6285376765758";
