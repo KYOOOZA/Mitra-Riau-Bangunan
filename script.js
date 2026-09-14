@@ -4,48 +4,35 @@
 
 const products = [
     // KERAMIK & GRANITE
-    { id: 1, name: "Keramik 60x60", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Keramik lantai ukuran 60x60 cm." },
-    { id: 2, name: "Keramik 50x50", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Keramik lantai ukuran 50x50 cm." },
-    { id: 3, name: "Keramik 40x40", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Keramik lantai ukuran 40x40 cm." },
-    { id: 4, name: "Keramik 30x30", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Keramik lantai ukuran 30x30 cm." },
-    { id: 5, name: "Keramik 25x25", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Keramik lantai ukuran 25x25 cm." },
-    { id: 6, name: "Granite Tile 60x60", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Granite tile premium ukuran 60x60 cm." },
-    { id: 7, name: "Granite Tile 80x80", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Granite tile premium ukuran 80x80 cm." },
-    { id: 8, name: "Granite Tile 100x100", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Granite tile premium ukuran 100x100 cm." },
-    { id: 9, name: "Granite Tile 60x120", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Granite tile premium ukuran 60x120 cm." },
-    
+    { id: 1, name: "Keramik Lantai", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Keramik lantai.", sizes: ["25x25","30x30", "40x40", "50x50", "60x60"] },
+    { id: 2, name: "Granite Lantai", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Granite lantai.", sizes: ["25x25","30x30", "40x40", "50x50", "60x60"] },
+
     // PINTU, JENDELA & KUSEN
-    { id: 10, name: "Pintu UPVC", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Pintu UPVC untuk kebutuhan rumah." },
-    { id: 11, name: "Pintu PVC", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Pintu PVC untuk kebutuhan rumah." },
-    { id: 12, name: "Pintu Panel", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Pintu panel untuk rumah dan bangunan." },
-    { id: 13, name: "Kusen Aluminium", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Kusen aluminium berkualitas." },
-    { id: 14, name: "Jendela Aluminium", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Jendela aluminium untuk rumah." },
+    { id: 3, name: "Pintu UPVC", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Pintu UPVC untuk kebutuhan rumah." },
+    { id: 4, name: "Pintu PVC", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Pintu PVC untuk kebutuhan rumah." },
+    { id: 5, name: "Pintu Panel", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Pintu panel untuk rumah dan bangunan." },
+    { id: 6, name: "Kusen Aluminium", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Kusen aluminium berkualitas." },
+    { id: 7, name: "Jendela Aluminium", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Jendela aluminium untuk rumah." },
 
     // CAT & ALAT PELAPIS
-    { id: 15, name: "Cat Tembok Interior", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat tembok untuk penggunaan interior." },
-    { id: 16, name: "Cat Tembok Eksterior", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat eksterior tahan terhadap cuaca." },
-    { id: 17, name: "Cat Kayu & Besi", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat untuk permukaan kayu dan besi." },
-    { id: 18, name: "Roller Cat", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Roller untuk mengecat dinding." },
+    { id: 8, name: "Cat Tembok Interior", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat tembok untuk penggunaan interior." },
+    { id: 9, name: "Cat Tembok Eksterior", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat eksterior tahan terhadap cuaca." },
+    { id: 10, name: "Cat Kayu & Besi", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat untuk permukaan kayu dan besi." },
+    { id: 11, name: "Roller Cat", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Roller untuk mengecat dinding." },
 
     // CLOSET, SHOWER & WATER HEATER
-    { id: 19, name: "Closet Duduk", category: "Closet, Shower, & Water Heater", image: "images/placeholder.jpg", description: "Closet duduk untuk kamar mandi." },
-    { id: 20, name: "Closet Jongkok", category: "Closet, Shower, & Water Heater", image: "images/placeholder.jpg", description: "Closet jongkok berkualitas." },
-    { id: 21, name: "Shower Kamar Mandi", category: "Closet, Shower, & Water Heater", image: "images/placeholder.jpg", description: "Shower kamar mandi modern." },
-    { id: 22, name: "Water Heater", category: "Closet, Shower, & Water Heater", image: "images/placeholder.jpg", description: "Pemanas air untuk kebutuhan rumah." },
+    { id: 12, name: "Closet Duduk", category: "Closet, Shower, & Water Heater", image: "images/placeholder.jpg", description: "Closet duduk untuk kamar mandi." },
+    { id: 13, name: "Closet Jongkok", category: "Closet, Shower, & Water Heater", image: "images/placeholder.jpg", description: "Closet jongkok berkualitas." },
+    { id: 14, name: "Shower Kamar Mandi", category: "Closet, Shower, & Water Heater", image: "images/placeholder.jpg", description: "Shower kamar mandi modern." },
+    { id: 15, name: "Water Heater", category: "Closet, Shower, & Water Heater", image: "images/placeholder.jpg", description: "Pemanas air untuk kebutuhan rumah." },
 
     // PIPA & TOREN AIR
-    { id: 23, name: "Pipa PVC 1/2 Inch", category: "Pipa & Toren Air", image: "images/placeholder.jpg", description: "Pipa PVC untuk instalasi air." },
-    { id: 24, name: "Pipa PVC 3/4 Inch", category: "Pipa & Toren Air", image: "images/placeholder.jpg", description: "Pipa PVC ukuran 3/4 inch." },
-    { id: 25, name: "Pipa PVC 1 Inch", category: "Pipa & Toren Air", image: "images/placeholder.jpg", description: "Pipa PVC ukuran 1 inch." },
-    { id: 26, name: "Toren Air 250 Liter", category: "Pipa & Toren Air", image: "images/placeholder.jpg", description: "Toren air kapasitas 250 liter." },
-    { id: 27, name: "Toren Air 500 Liter", category: "Pipa & Toren Air", image: "images/placeholder.jpg", description: "Toren air kapasitas 500 liter." },
-    { id: 28, name: "Toren Air 750 Liter", category: "Pipa & Toren Air", image: "images/placeholder.jpg", description: "Toren air kapasitas 750 liter." },
-    { id: 29, name: "Toren Air 1000 Liter", category: "Pipa & Toren Air", image: "images/placeholder.jpg", description: "Toren air kapasitas 1000 liter." },
-    { id: 30, name: "Toren Air 2000 Liter", category: "Pipa & Toren Air", image: "images/placeholder.jpg", description: "Toren air kapasitas 2000 liter." },
+    { id: 16, name: "Pipa PVC", category: "Pipa & Toren Air", image: "images/placeholder.jpg", description: "Pipa PVC untuk instalasi air.", sizes: ["1/2 Inch", "3/4 Inch", "1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
+    { id: 17, name: "Toren Air", category: "Pipa & Toren Air", image: "images/placeholder.jpg", description: "Toren air kapasitas.", sizes: ["250 Liter", "500 Liter", "750 Liter", "1000 Liter", "2000 Liter"] },
 
     // BESI & BAJA RINGAN
-    { id: 31, name: "Besi Beton Ulir", category: "Besi & Baja Ringan", image: "besi/Besi Beton Ulir.jpeg", description: "Besi beton ulir untuk kebutuhan konstruksi." },
-    { id: 32, name: "Besi Beton Polos", category: "Besi & Baja Ringan", image: "besi/Besi Beton Polos.jpeg", description: "Besi beton polos untuk kebutuhan konstruksi." },
+    { id: 31, name: "Besi Beton Ulir", category: "Besi & Baja Ringan", image: "besi/Besi Beton Ulir.jpeg", description: "Besi beton ulir untuk kebutuhan konstruksi.", sizes: ["8mm", "10mm", "12mm", "16mm", "19mm"] },
+    { id: 32, name: "Besi Beton Polos", category: "Besi & Baja Ringan", image: "besi/Besi Beton Polos.jpeg", description: "Besi beton polos untuk kebutuhan konstruksi.", sizes: ["8mm", "10mm", "12mm", "16mm", "19mm"] },
     { id: 33, name: "Baja Ringan 75x75", category: "Besi & Baja Ringan", image: "besi/Baja Ringan.jpeg", description: "Baja ringan profil 75x75." },
     { id: 34, name: "Atap Spandek", category: "Besi & Baja Ringan", image: "besi/Atap Spandek.jpg", description: "Atap Spandek." },
     { id: 35, name: "Atap Kodian", category: "Besi & Baja Ringan", image: "besi/Atap Kodian.jpg", description: "Atap Kodian." },
