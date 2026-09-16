@@ -22,7 +22,7 @@ const products = [
   { id: 12, name: "Cat Pilox", category: "Cat & Alat Pelapis", image: "cat/diton.jpg", description: "Pilox adalah cat semprot aerosol praktis yang digunakan untuk mewarnai, melindungi, dan memperindah berbagai permukaan seperti logam, kayu, hingga plastik tanpa perlu kuas.", color: ["Merah", "Biru", "Hitam", "Kuning", "Putih", "Coklat Muda", ""] },
 
   // CLOSET, SHOWER & WATER HEATER
-  { id: 13, name: "Closet Duduk", category: "Closet, Shower, & Water Heater", image: "closet/closet kia.jpg", description: "Closet duduk untuk kamar mandi." },
+  { id: 13, name: "Closet Duduk Volk", category: "Closet, Shower, & Water Heater", image: "closet/Closet Duduk Volk.jpeg", description: "Closet duduk untuk kamar mandi." },
   { id: 14, name: "Closet Jongkok", category: "Closet, Shower, & Water Heater", image: "closet/jongkok.png", description: "Closet jongkok berkualitas." },
   { id: 15, name: "Shower Kamar Mandi", category: "Closet, Shower, & Water Heater", image: "closet/shower mandi.jpg", description: "Shower kamar mandi modern." },
   { id: 16, name: "Water Heater", category: "Closet, Shower, & Water Heater", image: "closet/water heater.png", description: "Pemanas air untuk kebutuhan rumah." },
