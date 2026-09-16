@@ -10,7 +10,7 @@ const products = [
   // PINTU, JENDELA & KUSEN
   { id: 3, name: "Pintu UPVC", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Pintu UPVC untuk kebutuhan rumah." },
   { id: 4, name: "Pintu PVC", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Pintu PVC untuk kebutuhan rumah." },
-  { id: 5, name: "Pintu Panel", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Pintu panel untuk rumah dan bangunan." },
+  { id: 5, name: "Pintu Kayu Solid", category: "Pintu, Jendela, & Kusen", image: "pintu/ubud..jpg", description: "Pintu panel untuk rumah dan bangunan." },
   { id: 6, name: "Kusen Aluminium", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Kusen aluminium berkualitas." },
   { id: 7, name: "Jendela Aluminium", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Jendela aluminium untuk rumah." },
 
@@ -19,7 +19,7 @@ const products = [
   { id: 9, name: "Cat Tembok Eksterior", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat eksterior tahan terhadap cuaca." },
   { id: 10, name: "Cat Kayu & Besi", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat untuk permukaan kayu dan besi." },
   { id: 11, name: "Roller Cat", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Roller untuk mengecat dinding." },
-  { id: 12, name: "Cat Pilox", category: "Cat & Alat Pelapis", image: "cat/diton.jpg", description: "Pilox adalah cat semprot aerosol praktis yang digunakan untuk mewarnai, melindungi, dan memperindah berbagai permukaan seperti logam, kayu, hingga plastik tanpa perlu kuas.", color: ["Merah", "Biru", "Hitam", "Kuning", "Dan lain-lain"] },
+  { id: 12, name: "Cat Pilox", category: "Cat & Alat Pelapis", image: "cat/diton.jpg", description: "Pilox adalah cat semprot aerosol praktis yang digunakan untuk mewarnai, melindungi, dan memperindah berbagai permukaan seperti logam, kayu, hingga plastik tanpa perlu kuas.", color: ["Merah", "Biru", "Hitam", "Kuning", "Putih", "Coklat Muda", ""] },
 
   // CLOSET, SHOWER & WATER HEATER
   { id: 13, name: "Closet Duduk", category: "Closet, Shower, & Water Heater", image: "closet/closet kia.jpg", description: "Closet duduk untuk kamar mandi." },
@@ -50,17 +50,17 @@ const products = [
   { id: 44, name: "Dempul RJ Wall Putty", category: "Semen & Bahan Bangunan", image: "semen/Dempul RJ Wall Putty.jpg", description: "Dempul untuk permukaan dinding.", sizes: ["0,5 Kg", "1 Kg", "5 Kg", "25 Kg"] },
 
   // PERKAKAS, BAUT & AKSESORIS
-  { id: 45, name: "Paku Bangunan", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Paku Bangunan.jpg", description: "Paku untuk berbagai kebutuhan bangunan." },
-  { id: 46, name: "Baut Besi", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Baut Besi.jpg", description: "Baut untuk kebutuhan konstruksi." },
-  { id: 47, name: "Obeng Set", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Obeng Set.jpg", description: "Set obeng untuk pekerjaan rumah." },
-  { id: 48, name: "Tang Kombinasi", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Tang Kombinasi.jpg", description: "Tang kombinasi untuk berbagai pekerjaan." }
+  { id: 45, name: "Paku Bangunan", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Paku Bangunan.jpg", description: "Paku untuk berbagai kebutuhan bangunan.", sizes: ["1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
+  { id: 46, name: "Baut Roofing", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Baut Roofing.jpg", description: "Baut untuk kebutuhan konstruksi.", sizes: ["1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
+  { id: 47, name: "Obeng Set", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Obeng Set.jpg", description: "Set obeng untuk pekerjaan rumah.", sizes: ["1 pcs", "5 pcs", "10 pcs"] },
+  { id: 48, name: "Tang Kombinasi", category: "Perkakas, Baut & Aksesoris", image: "baut/tang.jpg", description: "Tang kombinasi untuk berbagai pekerjaan."}
 ];
 
 const ADMIN_WA = "6285376765758";
 
 // =========================
 // TAMPILKAN PRODUK
-// =========================
+// ========================= 
 
 function displayProducts(productList = products) {
   const productContainer = document.getElementById("productList");
