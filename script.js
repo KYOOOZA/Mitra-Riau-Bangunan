@@ -22,14 +22,15 @@ const products = [
   { id: 12, name: "Cat Pilox", category: "Cat & Alat Pelapis", image: "cat/diton.jpg", description: "Pilox adalah cat semprot aerosol praktis yang digunakan untuk mewarnai, melindungi, dan memperindah berbagai permukaan seperti logam, kayu, hingga plastik tanpa perlu kuas.", color: ["Merah", "Biru", "Hitam", "Kuning", "Putih", "Coklat Muda", ""] },
 
   // CLOSET, SHOWER & WATER HEATER
-  { id: 13, name: "Closet Duduk Volk", category: "Closet, Shower, & Water Heater", image: "closet/Closet Duduk Volk.jpeg", description: "Closet duduk untuk kamar mandi." },
-  { id: 14, name: "Closet Jongkok", category: "Closet, Shower, & Water Heater", image: "closet/jongkok.png", description: "Closet jongkok berkualitas." },
-  { id: 15, name: "Shower Kamar Mandi", category: "Closet, Shower, & Water Heater", image: "closet/shower mandi.jpg", description: "Shower kamar mandi modern." },
-  { id: 16, name: "Water Heater", category: "Closet, Shower, & Water Heater", image: "closet/water heater.png", description: "Pemanas air untuk kebutuhan rumah." },
+  { id: 13, name: "Closet Duduk Volk", category: "Closet, Shower, & Water Heater", image: "closet/Closet Duduk Volk.jpeg", description: "Closet Duduk Volk untuk kamar mandi." },
+  { id: 14, name: "Closet Duduk Toto", category: "Closet, Shower, & Water Heater", image: "closet/Closet Duduk Toto.jpg", description: "Closet Duduk Toto berkualitas." },
+  { id: 15, name: "Closet Jongkok Kia", category: "Closet, Shower, & Water Heater", image: "closet/Closet Jongkok Kia.jpeg", description: "Closet Jongkok Kia berkualitas." },
+  { id: 16, name: "Shower Kamar Mandi", category: "Closet, Shower, & Water Heater", image: "closet/shower mandi.jpg", description: "Shower kamar mandi modern." },
+  { id: 17, name: "Water Heater", category: "Closet, Shower, & Water Heater", image: "closet/water heater.png", description: "Pemanas air untuk kebutuhan rumah." },
 
   // PIPA & TOREN AIR
-  { id: 17, name: "Pipa PVC", category: "Pipa & Toren Air", image: "pipa/pipajpg.jpg", description: "Pipa PVC untuk instalasi air.", sizes: ["1/2 Inch", "3/4 Inch", "1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
-  { id: 18, name: "Toren Penguin", category: "Pipa & Toren Air", image: "pipa/Toren Penguin.jpg", description: "Toren air kapasitas.", sizes: ["250 Liter", "500 Liter", "750 Liter", "1000 Liter", "2000 Liter"] },
+  { id: 18, name: "Pipa PVC", category: "Pipa & Toren Air", image: "pipa/pipajpg.jpg", description: "Pipa PVC untuk instalasi air.", sizes: ["1/2 Inch", "3/4 Inch", "1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
+  { id: 19, name: "Toren Penguin", category: "Pipa & Toren Air", image: "pipa/Toren Penguin.jpg", description: "Toren air kapasitas.", sizes: ["250 Liter", "500 Liter", "750 Liter", "1000 Liter", "2000 Liter"] },
 
   // BESI & BAJA RINGAN
   { id: 31, name: "Besi Beton Ulir", category: "Besi & Baja Ringan", image: "besi/Besi Beton Ulir.jpeg", description: "Besi beton ulir untuk kebutuhan konstruksi.", sizes: ["8mm", "10mm", "12mm", "16mm", "19mm"] },
