@@ -4,57 +4,65 @@
 
 const products = [
   // KERAMIK & GRANITE
-  { id: 1, name: "Keramik Lantai", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Keramik lantai.", sizes: ["25x25", "30x30", "40x40", "50x50", "60x60"] },
-  { id: 2, name: "Granite Lantai", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Granite lantai.", sizes: ["25x25", "30x30", "40x40", "50x50", "60x60"] },
+  { id: 1, name: "Granite Tile VELLINO", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Granite tile presisi tinggi untuk interior & eksterior.", sizes: ["60x60", "80x80", "60x120"] },
+  { id: 2, name: "Granite Tile MAGIA Porcelain", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Granit porselen dengan kilap mewah tahan gores.", sizes: ["60x60", "60x120"] },
+  { id: 3, name: "Keramik MULIA / ACCURA", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Keramik berkualitas untuk lantai dan dinding.", sizes: ["20x20", "25x40", "40x40", "50x50"] },
+  { id: 4, name: "Keramik KOIN / KOBE", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Pilihan keramik hemat dan tahan lama.", sizes: ["25x25", "30x30", "40x40"] },
+  { id: 5, name: "Keramik ASIA TILE", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Keramik lantai dan dinding interior modern.", sizes: ["20x20", "30x30", "40x40"] },
+  { id: 6, name: "Keramik IKAD", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Keramik dekoratif dinding dan lantai.", sizes: ["25x40", "30x60", "50x50"] },
+  { id: 7, name: "Keramik KIA CERAMIC", category: "Keramik & Granite", image: "images/placeholder.jpg", description: "Keramik standar mutu tinggi tahan lama.", sizes: ["30x30", "40x40", "30x60"] },
 
   // PINTU, JENDELA & KUSEN
-  { id: 3, name: "Pintu UPVC", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Pintu UPVC untuk kebutuhan rumah." },
-  { id: 4, name: "Pintu PVC", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Pintu PVC untuk kebutuhan rumah." },
-  { id: 5, name: "Pintu Kayu Solid", category: "Pintu, Jendela, & Kusen", image: "pintu/ubud..jpg", description: "Pintu panel untuk rumah dan bangunan." },
-  { id: 6, name: "Kusen Aluminium", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Kusen aluminium berkualitas." },
-  { id: 7, name: "Jendela Aluminium", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Jendela aluminium untuk rumah." },
+  { id: 8, name: "Pintu UPVC", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Pintu UPVC kokoh dan anti-rayap." },
+  { id: 9, name: "Pintu PVC Kamar Mandi", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Pintu PVC praktis tahan air." },
+  { id: 10, name: "Pintu Kayu Solid Panel", category: "Pintu, Jendela, & Kusen", image: "pintu/ubud..jpg", description: "Pintu panel kayu natural elegan." },
+  { id: 11, name: "Kusen Aluminium", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Kusen aluminium presisi dan tahan cuaca." },
+  { id: 12, name: "Jendela Aluminium Minimalis", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Jendela aluminium modern." },
 
   // CAT & ALAT PELAPIS
-  { id: 8, name: "Cat Tembok Interior", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat tembok untuk penggunaan interior." },
-  { id: 9, name: "Cat Tembok Eksterior", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat eksterior tahan terhadap cuaca." },
-  { id: 10, name: "Cat Kayu & Besi", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat untuk permukaan kayu dan besi." },
-  { id: 11, name: "Roller Cat", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Roller untuk mengecat dinding." },
-  { id: 12, name: "Cat Pilox", category: "Cat & Alat Pelapis", image: "cat/diton.jpg", description: "Pilox adalah cat semprot aerosol praktis yang digunakan untuk mewarnai, melindungi, dan memperindah berbagai permukaan seperti logam, kayu, hingga plastik tanpa perlu kuas.", color: ["Merah", "Biru", "Hitam", "Kuning", "Putih", "Coklat Muda", ""] },
+  { id: 13, name: "Cat Tembok Interior", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat tembok interior warna tahan lama." },
+  { id: 14, name: "Cat Tembok Eksterior", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat eksterior pelindung cuaca ekstrem." },
+  { id: 15, name: "Cat Kayu & Besi", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat kilap pelindung kayu dan besi." },
+  { id: 16, name: "Roller Cat Tembok", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Roller kuas cat untuk aplikasi merata." },
+  { id: 17, name: "Cat Semprot Diton / Pilox", category: "Cat & Alat Pelapis", image: "cat/diton.jpg", description: "Cat semprot aerosol praktis tanpa kuas.", color: ["Merah", "Biru", "Hitam", "Kuning", "Putih", "Coklat Muda"] },
 
   // CLOSET, SHOWER & WATER HEATER
-  { id: 13, name: "Closet Duduk Volk", category: "Closet, Shower, & Water Heater", image: "closet/Closet Duduk Volk.jpeg", description: "Closet Duduk Volk untuk kamar mandi." },
-  { id: 14, name: "Closet Duduk Toto", category: "Closet, Shower, & Water Heater", image: "closet/Closet Duduk Toto.jpg", description: "Closet Duduk Toto berkualitas." },
-  { id: 15, name: "Closet Jongkok Kia", category: "Closet, Shower, & Water Heater", image: "closet/Closet Jongkok Kia.jpeg", description: "Closet Jongkok Kia berkualitas." },
-  { id: 16, name: "Shower Kamar Mandi", category: "Closet, Shower, & Water Heater", image: "closet/shower mandi.jpg", description: "Shower kamar mandi modern." },
-  { id: 17, name: "Water Heater", category: "Closet, Shower, & Water Heater", image: "closet/water heater.png", description: "Pemanas air untuk kebutuhan rumah." },
+  { id: 18, name: "Hand Shower Set MAKARZ", category: "Closet, Shower, & Water Heater", image: "closet/shower mandi.jpg", description: "Hand shower fleksibel dengan semprotan nyaman.", color: ["Krom Stainless", "Hitam Matte"] },
+  { id: 19, name: "Jet Shower Bidet MAKARZ", category: "Closet, Shower, & Water Heater", image: "images/placeholder.jpg", description: "Semprotan kloset bidet anti-bocor.", color: ["Putih Standard", "Krom Stainless", "Hitam Modern"] },
+  { id: 20, name: "Keran Mixer Shower POLYTHERM", category: "Closet, Shower, & Water Heater", image: "images/placeholder.jpg", description: "Keran pencampur air panas dingin untuk shower mandi." },
+  { id: 21, name: "Keran Air Wastafel / Cuci Piring", category: "Closet, Shower, & Water Heater", image: "images/placeholder.jpg", description: "Keran fleksibel model angsa dan tancap.", sizes: ["Model Angsa Tembok", "Model Angsa Meja", "Keran Tancap 1/2 Inch"] },
+  { id: 22, name: "Closet Duduk Volk", category: "Closet, Shower, & Water Heater", image: "closet/Closet Duduk Volk.jpeg", description: "Closet duduk hemat air dan mudah dibersihkan." },
+  { id: 23, name: "Closet Duduk Toto", category: "Closet, Shower, & Water Heater", image: "closet/Closet Duduk Toto.jpg", description: "Closet duduk TOTO standar sanitari modern." },
+  { id: 24, name: "Closet Jongkok Kia", category: "Closet, Shower, & Water Heater", image: "closet/Closet Jongkok Kia.jpeg", description: "Closet jongkok KIA porselen kuat." },
+  { id: 25, name: "Water Heater Pemanas Air", category: "Closet, Shower, & Water Heater", image: "closet/water heater.png", description: "Pemanas air mandi aman dan hemat energi." },
 
   // PIPA & TOREN AIR
-  { id: 18, name: "Pipa PVC", category: "Pipa & Toren Air", image: "pipa/pipajpg.jpg", description: "Pipa PVC untuk instalasi air.", sizes: ["1/2 Inch", "3/4 Inch", "1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
-  { id: 19, name: "Toren Penguin", category: "Pipa & Toren Air", image: "pipa/Toren Penguin.jpg", description: "Toren air kapasitas.", sizes: ["250 Liter", "500 Liter", "750 Liter", "1000 Liter", "2000 Liter"] },
+  { id: 26, name: "Pipa PVC Paralon", category: "Pipa & Toren Air", image: "pipa/pipajpg.jpg", description: "Pipa PVC saluran air bersih & buangan.", sizes: ["1/2 Inch", "3/4 Inch", "1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
+  { id: 27, name: "Toren Air Penguin", category: "Pipa & Toren Air", image: "pipa/Toren Penguin.jpg", description: "Tangki air penampungan anti-lumut.", sizes: ["250 Liter", "500 Liter", "750 Liter", "1000 Liter", "2000 Liter"] },
 
   // BESI & BAJA RINGAN
-  { id: 31, name: "Besi Beton Ulir", category: "Besi & Baja Ringan", image: "besi/Besi Beton Ulir.jpeg", description: "Besi beton ulir untuk kebutuhan konstruksi.", sizes: ["8mm", "10mm", "12mm", "16mm", "19mm"] },
-  { id: 32, name: "Besi Beton Polos", category: "Besi & Baja Ringan", image: "besi/Besi Beton Polos.jpeg", description: "Besi beton polos untuk kebutuhan konstruksi.", sizes: ["8mm", "10mm", "12mm", "16mm", "19mm"] },
-  { id: 33, name: "Baja Ringan 75x75", category: "Besi & Baja Ringan", image: "besi/Baja Ringan.jpeg", description: "Baja ringan profil 75x75." },
-  { id: 34, name: "Atap Spandek", category: "Besi & Baja Ringan", image: "besi/Atap Spandek.jpg", description: "Atap Spandek." },
-  { id: 35, name: "Atap Kodian", category: "Besi & Baja Ringan", image: "besi/Atap Kodian.jpg", description: "Atap Kodian." },
+  { id: 28, name: "Besi Beton Ulir", category: "Besi & Baja Ringan", image: "besi/Besi Beton Ulir.jpeg", description: "Besi beton ulir untuk cor & struktur.", sizes: ["8mm", "10mm", "12mm", "16mm", "19mm"] },
+  { id: 29, name: "Besi Beton Polos", category: "Besi & Baja Ringan", image: "besi/Besi Beton Polos.jpeg", description: "Besi beton polos standar konstruksi.", sizes: ["8mm", "10mm", "12mm", "16mm", "19mm"] },
+  { id: 30, name: "Baja Ringan C75", category: "Besi & Baja Ringan", image: "besi/Baja Ringan.jpeg", description: "Rangka baja ringan anti-karat 75x75." },
+  { id: 31, name: "Atap Seng Gelombang / Spandek", category: "Besi & Baja Ringan", image: "besi/Atap Spandek.jpg", description: "Atap spandek galvalum tahan lama.", color: ["Merah", "Biru", "Hitam", "Silver"] },
+  { id: 32, name: "Atap Kodian", category: "Besi & Baja Ringan", image: "besi/Atap Kodian.jpg", description: "Atap kodian berkualitas untuk pelindung rumah." },
 
   // SEMEN & BAHAN BANGUNAN
-  { id: 36, name: "Semen Conch", category: "Semen & Bahan Bangunan", image: "semen/Semen Conch.jpeg", description: "Semen untuk berbagai kebutuhan konstruksi." },
-  { id: 37, name: "Semen Merdeka", category: "Semen & Bahan Bangunan", image: "semen/Semen Merdeka.jpeg", description: "Semen untuk berbagai kebutuhan konstruksi." },
-  { id: 38, name: "Semen Padang", category: "Semen & Bahan Bangunan", image: "semen/Semen Padang.jpg", description: "Semen untuk pekerjaan bangunan." },
-  { id: 39, name: "Pasir Pasang", category: "Semen & Bahan Bangunan", image: "semen/Pasir Pasang.jpg", description: "Pasir Pasang untuk campuran konstruksi." },
-  { id: 40, name: "Pasir Cor", category: "Semen & Bahan Bangunan", image: "semen/Pasir Cor.jpeg", description: "Pasir Cor untuk pekerjaan konstruksi." },
-  { id: 41, name: "Kerikil", category: "Semen & Bahan Bangunan", image: "semen/Kerikil.jpg", description: "Kerikil untuk campuran beton." },
-  { id: 42, name: "Batu Bata", category: "Semen & Bahan Bangunan", image: "semen/Batu Bata.jpeg", description: "Batu bata untuk dinding bangunan." },
-  { id: 43, name: "Gypsum Eboard 8mm", category: "Semen & Bahan Bangunan", image: "semen/Gypsum.jpeg", description: "Gypsum Eboard 8mm untuk dinding bangunan." },
-  { id: 44, name: "Dempul RJ Wall Putty", category: "Semen & Bahan Bangunan", image: "semen/Dempul RJ Wall Putty.jpg", description: "Dempul untuk permukaan dinding.", sizes: ["0,5 Kg", "1 Kg", "5 Kg", "25 Kg"] },
+  { id: 33, name: "Semen Conch", category: "Semen & Bahan Bangunan", image: "semen/Semen Conch.jpeg", description: "Semen serbaguna adukan cepat keras." },
+  { id: 34, name: "Semen Merdeka", category: "Semen & Bahan Bangunan", image: "semen/Semen Merdeka.jpeg", description: "Semen konstruksi bangunan tahan lama." },
+  { id: 35, name: "Semen Padang", category: "Semen & Bahan Bangunan", image: "semen/Semen Padang.jpg", description: "Semen Padang bermutu tinggi." },
+  { id: 36, name: "Pasir Pasang", category: "Semen & Bahan Bangunan", image: "semen/Pasir Pasang.jpg", description: "Pasir pasang untuk adukan plesteran." },
+  { id: 37, name: "Pasir Cor", category: "Semen & Bahan Bangunan", image: "semen/Pasir Cor.jpeg", description: "Pasir cor beton konstruksi." },
+  { id: 38, name: "Kerikil / Batu Split", category: "Semen & Bahan Bangunan", image: "semen/Kerikil.jpg", description: "Kerikil cor beton struktur." },
+  { id: 39, name: "Batu Bata Merah", category: "Semen & Bahan Bangunan", image: "semen/Batu Bata.jpeg", description: "Batu bata pres pembatas dinding." },
+  { id: 40, name: "Gypsum Eboard 8mm", category: "Semen & Bahan Bangunan", image: "semen/Gypsum.jpeg", description: "Papan gypsum plafon dan partisi." },
+  { id: 41, name: "Dempul RJ Wall Putty", category: "Semen & Bahan Bangunan", image: "semen/Dempul RJ Wall Putty.jpg", description: "Dempul penambal celah dinding halus.", sizes: ["0,5 Kg", "1 Kg", "5 Kg", "25 Kg"] },
 
   // PERKAKAS, BAUT & AKSESORIS
-  { id: 45, name: "Paku Kayu", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Paku Kayu.jpg", description: "Paku untuk berbagai kebutuhan bangunan.", sizes: ["1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
-  { id: 46, name: "Baut Roofing", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Baut Roofing.jpg", description: "Baut untuk kebutuhan konstruksi.", sizes: ["1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
-  { id: 47, name: "Obeng Set", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Obeng Set.jpg", description: "Set obeng untuk pekerjaan rumah.", sizes: ["1 pcs", "5 pcs", "10 pcs"] },
-  { id: 48, name: "Tang Kombinasi", category: "Perkakas, Baut & Aksesoris", image: "baut/Tang Kombinasi.jpg", description: "Tang kombinasi untuk berbagai pekerjaan."}
+  { id: 42, name: "Paku Kayu", category: "Perkakas, Baut & Aksesoris", image: "baut/Paku Kayu.jpg", description: "Paku bangunan bahan besi kuat.", sizes: ["1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
+  { id: 43, name: "Baut Roofing / Baja Ringan", category: "Perkakas, Baut & Aksesoris", image: "baut/Baut Roofing.jpg", description: "Baut roofing karet anti-bocor.", sizes: ["1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
+  { id: 44, name: "Obeng Set Multi", category: "Perkakas, Baut & Aksesoris", image: "baut/Obeng Set.jpg", description: "Set perkakas obeng presisi.", sizes: ["1 pcs", "5 pcs", "10 pcs"] },
+  { id: 45, name: "Tang Kombinasi", category: "Perkakas, Baut & Aksesoris", image: "baut/Tang Kombinasi.jpg", description: "Tang kombinasi perkakas multifungsi." }
 ];
 
 const ADMIN_WA = "6285376765758";
@@ -80,9 +88,10 @@ function displayProducts(productList = products) {
   productContainer.innerHTML = productList.map(product => {
     const imagePath = encodeURI(product.image);
 
-    // Ambil opsi dari array sizes atau color
-    const variants = product.sizes || product.color;
-    const labelTitle = product.color ? "Pilih Warna:" : "Pilih Ukuran / Tipe:";
+    // Filter varian warna yang tidak kosong string-nya
+    const validColors = product.color ? product.color.filter(c => c.trim() !== "") : null;
+    const variants = product.sizes || validColors;
+    const labelTitle = validColors ? "Pilih Warna:" : "Pilih Ukuran / Tipe:";
 
     let variantSelectHTML = "";
     if (variants && variants.length > 0) {
@@ -110,19 +119,19 @@ function displayProducts(productList = products) {
             loading="lazy"
           >
         </div>
-        <div class="product-info" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+        <div class="product-info" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; padding: 15px;">
           <div>
-            <div class="product-category">
+            <div class="product-category" style="font-size: 11px; color: #1971c2; font-weight: bold; text-transform: uppercase;">
               ${product.category}
             </div>
-            <h3>${product.name}</h3>
-            <p class="product-description">
+            <h3 style="font-size: 16px; margin: 6px 0;">${product.name}</h3>
+            <p class="product-description" style="font-size: 13px; color: #666; line-height: 1.4;">
               ${product.description}
             </p>
           </div>
           <div>
             ${variantSelectHTML}
-            <button onclick="askProduct(${product.id})" style="display: block; width: 100%; text-align: center; padding: 10px; background-color: #25D366; color: white; border: none; border-radius: 6px; font-weight: bold; font-size: 13px; cursor: pointer;">
+            <button onclick="askProduct(${product.id})" style="display: block; width: 100%; text-align: center; padding: 10px; background-color: #25D366; color: white; border: none; border-radius: 6px; font-weight: bold; font-size: 13px; cursor: pointer; margin-top: 5px;">
               💬 Tanya Produk Ini
             </button>
           </div>
@@ -143,7 +152,7 @@ function askProduct(productId) {
   let variantInfo = "";
   const selectEl = document.getElementById(`variant-${productId}`);
   if (selectEl) {
-    const label = product.color ? "Warna" : "Ukuran";
+    const label = (product.color && product.color.length > 0) ? "Warna" : "Ukuran/Tipe";
     variantInfo = ` (${label}: ${selectEl.value})`;
   }
 
