@@ -62,8 +62,7 @@ const products = [
   // PERKAKAS, BAUT & AKSESORIS
   { id: 43, name: "Paku Kayu", category: "Perkakas, Baut & Aksesoris", image: "baut/Paku Kayu.jpg", description: "Paku bangunan bahan besi kuat.", sizes: ["1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
   { id: 44, name: "Baut Roofing / Baja Ringan", category: "Perkakas, Baut & Aksesoris", image: "baut/Baut Roofing.jpg", description: "Baut roofing karet anti-bocor.", sizes: ["1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
-  { id: 45, name: "Obeng Set Multi", category: "Perkakas, Baut & Aksesoris", image: "baut/Obeng Set.jpg", description: "Set perkakas obeng presisi.", sizes: ["1 pcs", "5 pcs", "10 pcs"] },
-  { id: 46, name: "Tang Kombinasi", category: "Perkakas, Baut & Aksesoris", image: "baut/Tang Kombinasi.jpg", description: "Tang kombinasi perkakas multifungsi." }
+  { id: 45, name: "Tang Kombinasi", category: "Perkakas, Baut & Aksesoris", image: "baut/Tang Kombinasi.jpg", description: "Tang kombinasi perkakas multifungsi." }
 ];
 
 const ADMIN_WA = "6285376765758";
