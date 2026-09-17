@@ -51,10 +51,10 @@ const products = [
   { id: 44, name: "Dempul RJ Wall Putty", category: "Semen & Bahan Bangunan", image: "semen/Dempul RJ Wall Putty.jpg", description: "Dempul untuk permukaan dinding.", sizes: ["0,5 Kg", "1 Kg", "5 Kg", "25 Kg"] },
 
   // PERKAKAS, BAUT & AKSESORIS
-  { id: 45, name: "Paku Bangunan", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Paku Bangunan.jpg", description: "Paku untuk berbagai kebutuhan bangunan.", sizes: ["1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
+  { id: 45, name: "Paku Kayu", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Paku Kayu.jpg", description: "Paku untuk berbagai kebutuhan bangunan.", sizes: ["1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
   { id: 46, name: "Baut Roofing", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Baut Roofing.jpg", description: "Baut untuk kebutuhan konstruksi.", sizes: ["1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
   { id: 47, name: "Obeng Set", category: "Perkakas, Baut & Aksesoris", image: "perkakas/Obeng Set.jpg", description: "Set obeng untuk pekerjaan rumah.", sizes: ["1 pcs", "5 pcs", "10 pcs"] },
-  { id: 48, name: "Tang Kombinasi", category: "Perkakas, Baut & Aksesoris", image: "baut/tang.jpg", description: "Tang kombinasi untuk berbagai pekerjaan."}
+  { id: 48, name: "Tang Kombinasi", category: "Perkakas, Baut & Aksesoris", image: "baut/Tang Kombinasi.jpg", description: "Tang kombinasi untuk berbagai pekerjaan."}
 ];
 
 const ADMIN_WA = "6285376765758";
