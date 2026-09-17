@@ -20,7 +20,7 @@ const products = [
   { id: 12, name: "Jendela Aluminium Minimalis", category: "Pintu, Jendela, & Kusen", image: "images/placeholder.jpg", description: "Jendela aluminium modern." },
 
   // CAT & ALAT PELAPIS
-  { id: 13, name: "Cat Tembok Interior", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat tembok interior warna tahan lama." },
+  { id: 13, name: "Cat Ftalit Kansai", category: "Cat & Alat Pelapis", image: "cat/Cat Ftalit Kansai.jpg", description: "Cat Minyak khusus kayu dan besi." },
   { id: 14, name: "Cat Tembok Eksterior", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat eksterior pelindung cuaca ekstrem." },
   { id: 15, name: "Cat Kayu & Besi", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat kilap pelindung kayu dan besi." },
   { id: 16, name: "Roller Cat Tembok", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Roller kuas cat untuk aplikasi merata." },
