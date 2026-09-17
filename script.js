@@ -38,31 +38,32 @@ const products = [
 
   // PIPA & TOREN AIR
   { id: 26, name: "Pipa PVC Paralon", category: "Pipa & Toren Air", image: "pipa/pipajpg.jpg", description: "Pipa PVC saluran air bersih & buangan.", sizes: ["1/2 Inch", "3/4 Inch", "1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
-  { id: 27, name: "Toren Air Penguin", category: "Pipa & Toren Air", image: "pipa/Toren Penguin.jpg", description: "Tangki air penampungan anti-lumut.", sizes: ["250 Liter", "500 Liter", "750 Liter", "1000 Liter", "2000 Liter"] },
+  { id: 27, name: "Pipa PVC Champion", category: "Pipa & Toren Air", image: "pipa/Pipa Champion.jpg", description: "Pipa PVC fleksibel untuk saluran air.", sizes: ["1/2 Inch", "3/4 Inch", "1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
+  { id: 28, name: "Toren Air Penguin", category: "Pipa & Toren Air", image: "pipa/Toren Penguin.jpg", description: "Tangki air penampungan anti-lumut.", sizes: ["250 Liter", "500 Liter", "750 Liter", "1000 Liter", "2000 Liter"] },
 
   // BESI & BAJA RINGAN
-  { id: 28, name: "Besi Beton Ulir", category: "Besi & Baja Ringan", image: "besi/Besi Beton Ulir.jpeg", description: "Besi beton ulir untuk cor & struktur.", sizes: ["8mm", "10mm", "12mm", "16mm", "19mm"] },
-  { id: 29, name: "Besi Beton Polos", category: "Besi & Baja Ringan", image: "besi/Besi Beton Polos.jpeg", description: "Besi beton polos standar konstruksi.", sizes: ["8mm", "10mm", "12mm", "16mm", "19mm"] },
-  { id: 30, name: "Baja Ringan C Canal", category: "Besi & Baja Ringan", image: "besi/Baja Ringan.jpg", description: "Rangka baja ringan anti-karat 75x75." },
-  { id: 31, name: "Atap Seng Gelombang / Spandek", category: "Besi & Baja Ringan", image: "besi/Atap Spandek.jpg", description: "Atap spandek galvalum tahan lama.", color: ["Merah", "Biru", "Hitam", "Silver"] },
-  { id: 32, name: "Atap Kodian", category: "Besi & Baja Ringan", image: "besi/Atap Kodian.jpg", description: "Atap kodian berkualitas untuk pelindung rumah." },
+  { id: 29, name: "Besi Beton Ulir", category: "Besi & Baja Ringan", image: "besi/Besi Beton Ulir.jpeg", description: "Besi beton ulir untuk cor & struktur.", sizes: ["8mm", "10mm", "12mm", "16mm", "19mm"] },
+  { id: 30, name: "Besi Beton Polos", category: "Besi & Baja Ringan", image: "besi/Besi Beton Polos.jpeg", description: "Besi beton polos standar konstruksi.", sizes: ["8mm", "10mm", "12mm", "16mm", "19mm"] },
+  { id: 31, name: "Baja Ringan C Canal", category: "Besi & Baja Ringan", image: "besi/Baja Ringan.jpg", description: "Rangka baja ringan anti-karat 75x75." },
+  { id: 32, name: "Atap Seng Gelombang / Spandek", category: "Besi & Baja Ringan", image: "besi/Atap Spandek.jpg", description: "Atap spandek galvalum tahan lama.", color: ["Merah", "Biru", "Hitam", "Silver"] },
+  { id: 33, name: "Atap Kodian", category: "Besi & Baja Ringan", image: "besi/Atap Kodian.jpg", description: "Atap kodian berkualitas untuk pelindung rumah." },
 
   // SEMEN & BAHAN BANGUNAN
-  { id: 33, name: "Semen Conch", category: "Semen & Bahan Bangunan", image: "semen/Semen Conch.jpeg", description: "Semen serbaguna adukan cepat keras." },
-  { id: 34, name: "Semen Merdeka", category: "Semen & Bahan Bangunan", image: "semen/Semen Merdeka.jpeg", description: "Semen konstruksi bangunan tahan lama." },
-  { id: 35, name: "Semen Padang", category: "Semen & Bahan Bangunan", image: "semen/Semen Padang.jpg", description: "Semen Padang bermutu tinggi." },
-  { id: 36, name: "Pasir Pasang", category: "Semen & Bahan Bangunan", image: "semen/Pasir Pasang.jpg", description: "Pasir pasang untuk adukan plesteran." },
-  { id: 37, name: "Pasir Cor", category: "Semen & Bahan Bangunan", image: "semen/Pasir Cor.jpeg", description: "Pasir cor beton konstruksi." },
-  { id: 38, name: "Kerikil / Batu Split", category: "Semen & Bahan Bangunan", image: "semen/Kerikil.jpg", description: "Kerikil cor beton struktur." },
-  { id: 39, name: "Batu Bata Merah", category: "Semen & Bahan Bangunan", image: "semen/Batu Bata.jpeg", description: "Batu bata pres pembatas dinding." },
-  { id: 40, name: "Gypsum Eboard 8mm", category: "Semen & Bahan Bangunan", image: "semen/Gypsum.jpeg", description: "Papan gypsum plafon dan partisi." },
-  { id: 41, name: "Dempul RJ Wall Putty", category: "Semen & Bahan Bangunan", image: "semen/Dempul RJ Wall Putty.jpg", description: "Dempul penambal celah dinding halus.", sizes: ["0,5 Kg", "1 Kg", "5 Kg", "25 Kg"] },
+  { id: 34, name: "Semen Conch", category: "Semen & Bahan Bangunan", image: "semen/Semen Conch.jpeg", description: "Semen serbaguna adukan cepat keras." },
+  { id: 35, name: "Semen Merdeka", category: "Semen & Bahan Bangunan", image: "semen/Semen Merdeka.jpeg", description: "Semen konstruksi bangunan tahan lama." },
+  { id: 36, name: "Semen Padang", category: "Semen & Bahan Bangunan", image: "semen/Semen Padang.jpg", description: "Semen Padang bermutu tinggi." },
+  { id: 37, name: "Pasir Pasang", category: "Semen & Bahan Bangunan", image: "semen/Pasir Pasang.jpg", description: "Pasir pasang untuk adukan plesteran." },
+  { id: 38, name: "Pasir Cor", category: "Semen & Bahan Bangunan", image: "semen/Pasir Cor.jpeg", description: "Pasir cor beton konstruksi." },
+  { id: 39, name: "Kerikil / Batu Split", category: "Semen & Bahan Bangunan", image: "semen/Kerikil.jpg", description: "Kerikil cor beton struktur." },
+  { id: 40, name: "Batu Bata Merah", category: "Semen & Bahan Bangunan", image: "semen/Batu Bata.jpeg", description: "Batu bata pres pembatas dinding." },
+  { id: 41, name: "Gypsum Eboard 8mm", category: "Semen & Bahan Bangunan", image: "semen/Gypsum.jpeg", description: "Papan gypsum plafon dan partisi." },
+  { id: 42, name: "Dempul RJ Wall Putty", category: "Semen & Bahan Bangunan", image: "semen/Dempul RJ Wall Putty.jpg", description: "Dempul penambal celah dinding halus.", sizes: ["0,5 Kg", "1 Kg", "5 Kg", "25 Kg"] },
 
   // PERKAKAS, BAUT & AKSESORIS
-  { id: 42, name: "Paku Kayu", category: "Perkakas, Baut & Aksesoris", image: "baut/Paku Kayu.jpg", description: "Paku bangunan bahan besi kuat.", sizes: ["1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
-  { id: 43, name: "Baut Roofing / Baja Ringan", category: "Perkakas, Baut & Aksesoris", image: "baut/Baut Roofing.jpg", description: "Baut roofing karet anti-bocor.", sizes: ["1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
-  { id: 44, name: "Obeng Set Multi", category: "Perkakas, Baut & Aksesoris", image: "baut/Obeng Set.jpg", description: "Set perkakas obeng presisi.", sizes: ["1 pcs", "5 pcs", "10 pcs"] },
-  { id: 45, name: "Tang Kombinasi", category: "Perkakas, Baut & Aksesoris", image: "baut/Tang Kombinasi.jpg", description: "Tang kombinasi perkakas multifungsi." }
+  { id: 43, name: "Paku Kayu", category: "Perkakas, Baut & Aksesoris", image: "baut/Paku Kayu.jpg", description: "Paku bangunan bahan besi kuat.", sizes: ["1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
+  { id: 44, name: "Baut Roofing / Baja Ringan", category: "Perkakas, Baut & Aksesoris", image: "baut/Baut Roofing.jpg", description: "Baut roofing karet anti-bocor.", sizes: ["1 Inch", "2 Inch", "3 Inch", "4 Inch"] },
+  { id: 45, name: "Obeng Set Multi", category: "Perkakas, Baut & Aksesoris", image: "baut/Obeng Set.jpg", description: "Set perkakas obeng presisi.", sizes: ["1 pcs", "5 pcs", "10 pcs"] },
+  { id: 46, name: "Tang Kombinasi", category: "Perkakas, Baut & Aksesoris", image: "baut/Tang Kombinasi.jpg", description: "Tang kombinasi perkakas multifungsi." }
 ];
 
 const ADMIN_WA = "6285376765758";
