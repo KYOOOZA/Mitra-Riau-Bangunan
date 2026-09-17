@@ -43,7 +43,7 @@ const products = [
   // BESI & BAJA RINGAN
   { id: 28, name: "Besi Beton Ulir", category: "Besi & Baja Ringan", image: "besi/Besi Beton Ulir.jpeg", description: "Besi beton ulir untuk cor & struktur.", sizes: ["8mm", "10mm", "12mm", "16mm", "19mm"] },
   { id: 29, name: "Besi Beton Polos", category: "Besi & Baja Ringan", image: "besi/Besi Beton Polos.jpeg", description: "Besi beton polos standar konstruksi.", sizes: ["8mm", "10mm", "12mm", "16mm", "19mm"] },
-  { id: 30, name: "Baja Ringan C75", category: "Besi & Baja Ringan", image: "besi/Baja Ringan.jpeg", description: "Rangka baja ringan anti-karat 75x75." },
+  { id: 30, name: "Baja Ringan C Canal", category: "Besi & Baja Ringan", image: "besi/Baja Ringan.jpg", description: "Rangka baja ringan anti-karat 75x75." },
   { id: 31, name: "Atap Seng Gelombang / Spandek", category: "Besi & Baja Ringan", image: "besi/Atap Spandek.jpg", description: "Atap spandek galvalum tahan lama.", color: ["Merah", "Biru", "Hitam", "Silver"] },
   { id: 32, name: "Atap Kodian", category: "Besi & Baja Ringan", image: "besi/Atap Kodian.jpg", description: "Atap kodian berkualitas untuk pelindung rumah." },
 
