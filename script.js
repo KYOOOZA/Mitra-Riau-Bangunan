@@ -23,7 +23,7 @@ const products = [
   { id: 13, name: "Cat Ftalit Kansai", category: "Cat & Alat Pelapis", image: "cat/Cat Ftalit Kansai.jpg", description: "Cat Minyak khusus kayu dan besi." },
   { id: 14, name: "Cat Permata", category: "Cat & Alat Pelapis", image: "cat/Cat Permata.jpg", description: "Dinding Kokoh, Bebas Jamur, Indah Sepanjang Masa." },
   { id: 15, name: "Cat Kayu & Besi", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Cat kilap pelindung kayu dan besi." },
-  { id: 16, name: "Roller Cat Tembok", category: "Cat & Alat Pelapis", image: "images/placeholder.jpg", description: "Roller kuas cat untuk aplikasi merata." },
+  { id: 16, name: "Roller Cat Tembok", category: "Cat & Alat Pelapis", image: "cat/Roller Cat.jpg", description: "Roller kuas cat untuk aplikasi merata." },
   { id: 17, name: "Cat Semprot Diton / Pilox", category: "Cat & Alat Pelapis", image: "cat/diton.jpg", description: "Cat semprot aerosol praktis tanpa kuas.", color: ["Merah", "Biru", "Hitam", "Kuning", "Putih", "Coklat Muda"] },
 
   // CLOSET, SHOWER & WATER HEATER
