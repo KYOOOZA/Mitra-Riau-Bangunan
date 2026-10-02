@@ -274,7 +274,7 @@ img {
     flex-wrap: wrap;
     justify-content: center;
     gap: 8px;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 }
 
 .filter-btn {
@@ -301,71 +301,139 @@ img {
     border-color: #f5a400;
 }
 
-/* Grid Layout Produk */
+
+/* =========================
+   KATALOG SPESIFIKASI & GRID HORIZONTAL (MODEL VELLINO)
+========================= */
+
+/* Filter Bar Atas Katalag */
+.catalog-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 12px 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.filter-select {
+    padding: 8px 14px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #333;
+    background-color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.filter-select:focus {
+    border-color: #f5a400;
+}
+
+/* Container Grid Utama Katalog Produk */
+.products-grid-catalog,
 .products {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
 }
 
-/* Kartu Produk (Untuk JS Dinamis) */
+/* Card Produk Style Horizontal (Satu Frame Terlihat Banyak Varian) */
+.product-card-horizontal,
 .product-card {
-    background: #ffffff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.product-card-horizontal:hover,
 .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
 }
 
-.product-image {
-    width: 100%;
-    height: 200px;
-    background-color: #f0f0f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Foto Motif di Sebelah Kiri */
+.product-card-horizontal .product-image,
+.product-card .product-image {
+    width: 45%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background-color: #f1f3f5;
     overflow: hidden;
+    position: relative;
 }
 
-.product-image img {
+.product-card-horizontal .product-image img,
+.product-card .product-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-.product-info {
-    padding: 20px;
+.product-card-horizontal .product-image img:hover,
+.product-card .product-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Detail Produk di Sebelah Kanan */
+.product-card-horizontal .product-details,
+.product-card .product-info {
+    width: 55%;
+    padding: 14px 15px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    justify-content: space-between;
 }
 
-.product-category {
-    color: #f5a400;
-    font-size: 12px;
+.product-card-horizontal .product-brand {
+    font-size: 11px;
     font-weight: bold;
+    color: #f5a400;
     text-transform: uppercase;
-    margin-bottom: 5px;
+    letter-spacing: 0.5px;
 }
 
+.product-card-horizontal .product-title,
 .product-info h3 {
-    font-size: 18px;
-    color: #222;
-    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin: 4px 0 6px 0;
+    text-transform: uppercase;
 }
 
+.product-card-horizontal .product-spec,
 .product-description {
+    font-size: 12px;
     color: #666;
-    font-size: 13px;
-    margin-bottom: 20px;
-    flex-grow: 1;
+    margin-bottom: 10px;
+}
+
+.product-card-horizontal .link-detail {
+    font-size: 12px;
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.product-card-horizontal .link-detail:hover {
+    text-decoration: underline;
 }
 
 
@@ -542,6 +610,7 @@ footer {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    .products-grid-catalog,
     .products {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -603,9 +672,10 @@ footer {
         font-size: 28px;
     }
 
+    .products-grid-catalog,
     .products {
         grid-template-columns: 1fr; /* 1 Kolom Full di HP */
-        gap: 20px;
+        gap: 15px;
     }
 
     .map-container {

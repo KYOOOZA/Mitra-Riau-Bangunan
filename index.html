@@ -14,50 +14,129 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- STYLE TAMBAHAN UNTUK DROPDOWN UKURAN & MODAL ZOOM -->
+    <!-- STYLE TAMBAHAN UNTUK LAYOUT KATALOG HORIZONAL & FILTER -->
     <style>
-        .product-card {
+        /* Filter Bar Atas Katalag */
+        .catalog-filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding: 12px 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+
+        .filter-select {
+            padding: 8px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #333;
+            background-color: #fff;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .filter-select:focus {
+            border-color: #25D366;
+        }
+
+        /* Container Products dengan Grid Horizontal */
+        .products-grid-catalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        /* Card Produk Style Horizontal (Seperti Vellino) */
+        .product-card-horizontal {
+            display: flex;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .product-card-horizontal:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Foto Motif di Sebelah Kiri */
+        .product-card-horizontal .product-image {
+            width: 45%;
+            aspect-ratio: 1 / 1;
+            background-color: #f1f3f5;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-card-horizontal .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card-horizontal .product-image img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Detail Produk di Sebelah Kanan */
+        .product-card-horizontal .product-details {
+            width: 55%;
+            padding: 12px 15px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
-        .variant-container {
-            margin: 10px 0 15px 0;
-            background-color: #f8f9fa;
-            padding: 8px 10px;
-            border-radius: 6px;
-            border: 1px solid #e9ecef;
-        }
-        .variant-label {
-            display: block;
-            font-size: 11px;
+
+        .product-card-horizontal .product-brand {
+            font-size: 10px;
             font-weight: bold;
-            color: #495057;
-            margin-bottom: 4px;
+            color: #888;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        .variant-select {
-            width: 100%;
-            padding: 8px 10px;
-            border: 1px solid #ced4da;
-            border-radius: 5px;
-            font-size: 13px;
-            color: #212529;
-            background-color: #ffffff;
-            cursor: pointer;
-            outline: none;
-            transition: border-color 0.2s ease-in-out;
+
+        .product-card-horizontal .product-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin: 4px 0 8px 0;
+            text-transform: uppercase;
         }
-        .variant-select:focus {
-            border-color: #25D366;
+
+        .product-card-horizontal .product-spec {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 10px;
         }
-        .product-image img {
-            cursor: pointer;
-            transition: transform 0.2s ease-in-out;
+
+        .product-card-horizontal .link-detail {
+            font-size: 12px;
+            color: #0d6efd;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
-        .product-image img:hover {
-            transform: scale(1.02);
+
+        .product-card-horizontal .link-detail:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive untuk Handphone */
+        @media (max-width: 480px) {
+            .products-grid-catalog {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -282,7 +361,7 @@
             <input
                 type="text"
                 id="searchInput"
-                placeholder="🔍 Cari nama produk, ukuran, atau kategori..."
+                placeholder="🔍 Cari nama motif, ukuran, atau merek..."
                 oninput="searchProduct()"
                 autocomplete="off"
             >
@@ -290,7 +369,7 @@
         </div>
 
 
-        <!-- FILTER KATEGORI -->
+        <!-- FILTER KATEGORI UTAMA -->
 
         <div
             class="category-filters"
@@ -372,12 +451,76 @@
         </div>
 
 
-        <!-- KONTEN PRODUK (DIBUAT OTOMATIS OLEH JAVASCRIPT BESERTA PILIHAN UKURANNYA) -->
+        <!-- FILTER SPESIFIKASI ATAS KATALOG (UKURAN & FINISHING) -->
+        <div class="catalog-filter-bar">
+            <select id="filterUkuran" class="filter-select" onchange="filterCatalogBySpec()">
+                <option value="all">Semua Ukuran</option>
+                <option value="60x60">60 x 60 cm</option>
+                <option value="60x120">60 x 120 cm</option>
+                <option value="50x50">50 x 50 cm</option>
+                <option value="40x40">40 x 40 cm</option>
+            </select>
+
+            <select id="filterSurface" class="filter-select" onchange="filterCatalogBySpec()">
+                <option value="all">Semua Surface / Tekstur</option>
+                <option value="glossy">GLOSSY / POLISHED</option>
+                <option value="matt">MATT / MATTE</option>
+                <option value="structure">STRUCTURED / RUSTIC</option>
+            </select>
+        </div>
+
+
+        <!-- KONTEN PRODUK GRID HORIZONTAL (AKAN DI-RENDER OLEH JS / STATIC) -->
 
         <div
-            class="products"
+            class="products-grid-catalog"
             id="productList"
-        ></div>
+        >
+            <!-- Contoh Tampilan Card Varian / Motif Tunggal -->
+
+            <div class="product-card-horizontal" data-category="Keramik & Granite" data-ukuran="60x60" data-surface="glossy">
+                <div class="product-image">
+                    <img src="images/zapada-grey.jpg" alt="Zapada Grey" onclick="openImageModal(this.src)" onerror="this.src='https://via.placeholder.com/200?text=Gambar+Tidak+Tersedia'">
+                </div>
+                <div class="product-details">
+                    <div>
+                        <span class="product-brand">VELLINO</span>
+                        <h3 class="product-title">ZAPADA GREY</h3>
+                        <p class="product-spec">60 x 60 cm • Glossy</p>
+                    </div>
+                    <a href="https://wa.me/6285376765758?text=Halo%20Mitra%20Riau%20Bangunan,%20saya%20tertarik%20dengan%20Granit%20Vellino%20ZAPADA%20GREY." target="_blank" class="link-detail">Tanya Detail &rarr;</a>
+                </div>
+            </div>
+
+            <div class="product-card-horizontal" data-category="Keramik & Granite" data-ukuran="60x60" data-surface="glossy">
+                <div class="product-image">
+                    <img src="images/allister-bianco.jpg" alt="Allister Bianco" onclick="openImageModal(this.src)" onerror="this.src='https://via.placeholder.com/200?text=Gambar+Tidak+Tersedia'">
+                </div>
+                <div class="product-details">
+                    <div>
+                        <span class="product-brand">VELLINO</span>
+                        <h3 class="product-title">ALLISTER BIANCO</h3>
+                        <p class="product-spec">60 x 60 cm • Glossy</p>
+                    </div>
+                    <a href="https://wa.me/6285376765758?text=Halo%20Mitra%20Riau%20Bangunan,%20saya%20tertarik%20dengan%20Granit%20Vellino%20ALLISTER%20BIANCO." target="_blank" class="link-detail">Tanya Detail &rarr;</a>
+                </div>
+            </div>
+
+            <div class="product-card-horizontal" data-category="Keramik & Granite" data-ukuran="60x60" data-surface="glossy">
+                <div class="product-image">
+                    <img src="images/caverna-beige.jpg" alt="Caverna Beige" onclick="openImageModal(this.src)" onerror="this.src='https://via.placeholder.com/200?text=Gambar+Tidak+Tersedia'">
+                </div>
+                <div class="product-details">
+                    <div>
+                        <span class="product-brand">VELLINO</span>
+                        <h3 class="product-title">CAVERNA BEIGE</h3>
+                        <p class="product-spec">60 x 60 cm • Glossy</p>
+                    </div>
+                    <a href="https://wa.me/6285376765758?text=Halo%20Mitra%20Riau%20Bangunan,%20saya%20tertarik%20dengan%20Granit%20Vellino%20CAVERNA%20BEIGE." target="_blank" class="link-detail">Tanya Detail &rarr;</a>
+                </div>
+            </div>
+
+        </div>
 
     </section>
 
@@ -559,6 +702,40 @@
 
     <!-- JAVASCRIPT -->
     <script src="script.js?v=1000"></script>
+    <script>
+        // Fungsi tambahan untuk Filter Ukuran & Surface
+        function filterCatalogBySpec() {
+            const selectedUkuran = document.getElementById('filterUkuran').value;
+            const selectedSurface = document.getElementById('filterSurface').value;
+            const cards = document.querySelectorAll('.product-card-horizontal');
+
+            cards.forEach(card => {
+                const cardUkuran = card.getAttribute('data-ukuran');
+                const cardSurface = card.getAttribute('data-surface');
+
+                const matchUkuran = (selectedUkuran === 'all' || cardUkuran === selectedUkuran);
+                const matchSurface = (selectedSurface === 'all' || cardSurface === selectedSurface);
+
+                if (matchUkuran && matchSurface) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Fungsi Modal Zoom Gambar
+        function openImageModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'flex';
+            modalImg.src = src;
+        }
+
+        function closeImageModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+    </script>
 
 </body>
 
